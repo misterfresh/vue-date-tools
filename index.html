@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vue date tools</title>
+    <script src="/vue.js"></script>
+    <script src="/http-vue-loader.js"></script>
+</head>
+
+<body>
+<h1>Vue date tools presentation page</h1>
+
+<div id="app">
+    <tools-presentation></tools-presentation>
+</div>
+
+<script>
+    new window.Vue({
+        el: '#app',
+        components: {
+            'tools-presentation': window.httpVueLoader('/src/tools_presentation.vue'),
+        },
+    })
+</script>
+</body>
+</html>
