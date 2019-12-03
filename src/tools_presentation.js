@@ -3,6 +3,12 @@ import DatePickerArrows from './date_picker_arrows'
 import DateRangePicker from './date_range_picker'
 import DateRangePickerSuggestions from './date_range_picker_suggestions'
 import TimePicker from './time_picker'
+import addDays from '/deps/date-fns/addDays'
+import addMonths from '/deps/date-fns/addMonths'
+import startOfDay from '/deps/date-fns/startOfDay'
+import endOfDay from '/deps/date-fns/endOfDay'
+import startOfMonth from '/deps/date-fns/startOfMonth'
+import endOfMonth from '/deps/date-fns/endOfMonth'
 
 export default {
     name: 'tools-presentation',
@@ -17,10 +23,16 @@ export default {
         return {
             datePickerDate: new Date(),
             datePickerDateArrows: new Date(),
-            dateRangePickerDates: [new Date(), new Date()],
-            dateRangePickerSuggestionsDates: [new Date(), new Date()],
+            dateRangePickerDates: [addDays(new Date(), -7), new Date()],
+            dateRangePickerSuggestionsDates: [addDays(new Date(), -7), new Date()],
             timePickerTime: new Date()
         }
+    },
+
+    methods: {
+        startOfDay, endOfDay,
+        startOfMonth, endOfMonth,
+        addDays, addMonths
     },
 
     filters: {
@@ -65,7 +77,7 @@ export default {
                 last7Days: [addDays(new Date(), -7), new Date()],
                 last30Days: [addDays(new Date(), -30), new Date()],
                 lastMonth: [startOfMonth(addMonths(new Date(), -1)), endOfMonth(addMonths(new Date(), -1))],
-                custom: measuresRange
+                custom: dateRangePickerSuggestionsDates
             }"
         ></date-range-picker-suggestions>
     </div>

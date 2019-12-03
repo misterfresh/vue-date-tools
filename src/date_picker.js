@@ -107,11 +107,11 @@ export default {
         this.fullWidth = document.getElementById('date-picker-input-' + this.id).offsetWidth
     },
     template: `
-    <div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
-    <div v-if="!!label" class="label">{{label}}</div>
-    <div class="input-container" :id="'input-container-' + id">
+    <div class="dp-date-picker-container" :class="{'dp-including-label': !!label}" :id="'date-picker-container-' + id">
+    <div v-if="!!label" class="dp-label">{{label}}</div>
+    <div class="dp-input-container" :id="'input-container-' + id">
         <input
-                class="date-picker-input"
+                class="dp-date-picker-input"
                 @focus="(hasFocus = true) && scrollToDatePicker()"
                 :value="date | DDMMYYYYHHmmss"
                 :placeholder="!!placeholder ? placeholder : ''"
@@ -119,21 +119,21 @@ export default {
                 :id="'date-picker-input-' + id"
                 @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
         />
-        <div class="input-icon-container" :class="{focus: hasFocus}">
-            <i :class="'input-icon icon-' + icon"/>
+        <div class="dp-input-icon-container" :class="{focus: hasFocus}">
+            <i :class="'dp-input-icon icon-' + icon"/>
         </div>
     </div>
-    <div v-if="hasFocus" class="date-picker-underlay" @click="hasFocus=false"></div>
+    <div v-if="hasFocus" class="dp-date-picker-underlay" @click="hasFocus=false"></div>
     <div
-            class="date-picker"
+            class="dp-date-picker"
             v-if="hasFocus"
             :class="{
-                [position]: true
+                ['dp-' + position]: true
             }"
             :id="'date-picker-' + id"
 
     >
-        <div class="date-picker-inner">
+        <div class="dp-date-picker-inner">
             <time-selector
                     :active-date="activeDate"
                     @changeTime="date=>{activeDate = date}"

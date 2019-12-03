@@ -4,6 +4,7 @@ import setMonth from '/deps/date-fns/setMonth'
 import setYear from '/deps/date-fns/setYear'
 import getDateFromDDMMYYYY from './../parse/getDateFromDDMMYYYY'
 import debounce from '/deps/lodash.debounce.js'
+import formatDDMMYYYY from './../format/formatDDMMYYYY'
 
 export default {
     name: 'date-input',
@@ -54,18 +55,21 @@ export default {
             }
         }
     },
-    template: `<div class="input-container">
+    filters: {
+        'DDMMYYYY': formatDDMMYYYY
+    },
+    template: `<div class="di-input-container">
     <input
             @focus="(hasFocus = true)"
             @blur="(hasFocus = false)"
             :value="date | DDMMYYYY"
-            class="date-input"
+            class="di-date-input"
             :class="{focused: hasFocus}"
             :style="inputStyle"
             @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
     >
-    <div class="input-icon-container" :class="{focused: hasFocus}">
-        <i :class="'input-icon icon-calendar'"/>
+    <div class="di-input-icon-container" :class="{focused: hasFocus}">
+        <i :class="'di-input-icon icon-calendar'"/>
     </div>
 </div>`
 }

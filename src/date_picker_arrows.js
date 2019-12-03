@@ -107,44 +107,44 @@ export default {
         'DDMMYYYY': formatDDMMYYYY
     },
 
-    template: `<div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
-    <div v-if="!!label" class="label">{{label}}</div>
-    <div class="input-container" :id="'input-container-' + id">
-        <button class="navigation previous" :disabled="disabled" @click="()=>{$emit('change', addDays(date, -1)); hasFocus = false}">
-            <i class="icon-chevron-left direction"></i>
+    template: `<div class="da-date-picker-container" :class="{'da-including-label': !!label}" :id="'date-picker-container-' + id">
+    <div v-if="!!label" class="da-label">{{label}}</div>
+    <div class="da-input-container" :id="'input-container-' + id">
+        <button class="da-navigation previous" :disabled="disabled" @click="()=>{$emit('change', addDays(date, -1)); hasFocus = false}">
+            <i class="icon-chevron-left da-direction"></i>
         </button>
         <input
-                class="date-picker-input"
+                class="da-date-picker-input"
                 @focus="(hasFocus = true) && scrollToDatePicker()"
                 :value="date | DDMMYYYY"
                 :placeholder="!!placeholder ? placeholder : ''"
                 :style="inputStyle"
-                :class="{'is-disabled':disabled}"
+                :class="{'da-is-disabled':disabled}"
                 :id="'date-picker-input-' + id"
                 @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
         />
-        <div class="input-icon-container" :class="{focus: hasFocus}">
-            <i :class="'input-icon icon-' + icon" />
+        <div class="da-input-icon-container" :class="{focus: hasFocus}">
+            <i :class="'da-input-icon icon-' + icon" />
         </div>
-        <button class="navigation next" :disabled="!!disabled || (addDays(date, 1) > maxDate)" @click="()=>{$emit('change', addDays(date, 1)); hasFocus = false}" :class="{focus: hasFocus}">
-            <i class="icon-chevron-right direction"></i>
+        <button class="da-navigation next" :disabled="!!disabled || (addDays(date, 1) > maxDate)" @click="()=>{$emit('change', addDays(date, 1)); hasFocus = false}" :class="{focus: hasFocus}">
+            <i class="icon-chevron-right da-direction"></i>
         </button>
     </div>
-    <div v-if="hasFocus" class="date-picker-underlay" @click="hasFocus=false"></div>
+    <div v-if="hasFocus" class="da-date-picker-underlay" @click="hasFocus=false"></div>
     <div
-            class="date-picker"
+            class="da-date-picker"
             v-if="hasFocus"
             :class="{
-                top: position === 'top',
-                bottom: position === 'bottom',
-                left: position === 'left',
-                right: position === 'right',
-                'bottom-left': position === 'bottom-left'
+                'da-top': position === 'top',
+                'da-bottom': position === 'bottom',
+                'da-left': position === 'left',
+                'da-right': position === 'right',
+                'da-bottom-left': position === 'bottom-left'
             }"
             :id="'date-picker-' + id"
 
     >
-        <div class="date-picker-inner">
+        <div class="da-date-picker-inner">
             <month-selector
                     :view-date="viewDate"
                     @changeView="date=>{viewDate = date}"

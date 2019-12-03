@@ -1,20 +1,20 @@
-.date-picker-container {
+.da-date-picker-container {
     position: relative;
     display: block;
     height: 4rem;
 }
-.including-label {
+.da-including-label {
     height: 6rem;
 }
 
-.input-container {
+.da-input-container {
     position: relative;
     height: 4rem;
     width: 22rem;
     display: flex;
 }
 
-.date-picker-input {
+.da-date-picker-input {
     text-align: left;
     padding-left: 3.8rem;
     fill: transparent;
@@ -36,7 +36,7 @@
 
 }
 
-.date-picker-input:focus {
+.da-date-picker-input:focus {
     border-color: #7b4199;
     background-color: #7b4199;
     color: #fff;
@@ -49,7 +49,7 @@
     width: 14rem;
 }
 
-.date-picker-underlay {
+.da-date-picker-underlay {
     position: fixed;
     z-index: 12350;
     top: 0;
@@ -62,7 +62,7 @@
     opacity: 0;
 }
 
-.date-picker {
+.da-date-picker {
     position: absolute;
     z-index: 12400;
     display: flex;
@@ -72,12 +72,12 @@
     flex-direction: row;
 }
 
-.date-picker-inner {
+.da-date-picker-inner {
     display: flex;
     flex-direction: column;
 }
 
-.input-icon-container{
+.da-input-icon-container{
     position: absolute;
     left: 4rem;
     padding: 0;
@@ -89,63 +89,63 @@
     justify-content: center;
     pointer-events: none;
 }
-.input-icon-container.focus {
+.da-input-icon-container.focus {
     z-index: 12352;
 }
-.input-icon-container.focus i{
+.da-input-icon-container.focus i{
     color: #fff;
 }
-.input-icon {
+.da-input-icon {
     align-self: center;
     padding: 0;
     margin: 0;
     color: #7b4199;
 }
-.input-icon-focus {
+.da-input-icon-focus {
     color: #fff;
 }
-.input-container:hover input{
+.da-input-container:hover input{
     color: #fff;
     border-color: #7b4199;
     background-color: #7b4199;
 }
-.input-container:hover i{
+.da-input-container:hover i{
     color: #fff;
 }
-.top {
+.da-top {
 
 }
 
-.bottom {
+.da-bottom {
     width: 30rem;
     height: 20rem;
     top: 4rem;
     left: -4rem;
 }
 
-.bottom-left {
+.da-bottom-left {
     width: 30rem;
     height: 20rem;
     top: 4rem;
     right: 0;
 }
 
-.left {
+.da-left {
 
 }
 
-.right {
+.da-right {
 
 }
 
-.label {
+.da-label {
     color: #999;
     font-size: 1.4rem;
     padding-left: 15px;
     height: 20px;
 }
 
-.navigation{
+.da-navigation{
     background-color: #7b4199;
     border: 2px solid #7b4199;
     cursor: pointer;
@@ -160,41 +160,41 @@
     font-size: 1.6rem;
     outline: 0;
 }
-.navigation:hover{
+.da-navigation:hover{
     background-color: #9a50bf;
     border: 2px solid #9a50bf;
     border-left: none;
     border-right: none;
 }
-.navigation:hover i {
+.da-navigation:hover i {
     color: #fff;
 }
-.navigation:disabled {
+.da-navigation:disabled {
     border: 2px solid rgba(123, 65, 153, 0.5);
     fill: rgba(123, 65, 153, 0.5);
     background-color: rgba(123, 65, 153, 0.5);
     cursor: not-allowed;
 }
-.previous {
+.da-previous {
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
 }
-.previous:disabled {
+.da-previous:disabled {
     border-right: none;
 }
-.next {
+.da-next {
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
 }
-.next:disabled {
+.da-next:disabled {
     border-left: none;
 }
-.next.focus {
+.da-next.focus {
     position: absolute;
     right: 0;
     top: 0;
 }
-.direction {
+.da-direction {
     background-color: transparent;
     color: #fff;
     align-self: center;

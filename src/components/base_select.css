@@ -1,4 +1,4 @@
-.select {
+.bs-select {
     width: 5rem;
     height: 2.2rem;
     position: relative;
@@ -9,7 +9,7 @@
     border: 1px solid #ccc;
 }
 
-.select:after {
+.bs-select:after {
     content: "▼";
     color: #000;
     position: absolute;
@@ -24,11 +24,11 @@
     pointer-events: none;
 }
 
-.value {
+.bs-value {
     width: 100%;
 }
 
-.options {
+.bs-options {
     position: absolute;
     top: 2rem;
     z-index: 12500;
@@ -40,12 +40,12 @@
     pointer-events: none;
 }
 
-.visible {
+.bs-visible {
     opacity: 1;
     pointer-events: auto;
 }
 
-.option {
+.bs-option {
     background-color: #fff;
     color: #000;
     width: 5rem;
@@ -53,18 +53,18 @@
     padding-left: 0.5rem;
     padding-top: 0.2rem;
 }
-.option:hover {
+.bs-option:hover {
     background-color: #357ebd;
     color: #fff;
 }
-.option.disabled, .option.disabled:hover {
+.bs-option.disabled, .option.disabled:hover {
     color: #fff;
     background-color: #ccc;
 }
 
 
 
-.underlay {
+.bs-underlay {
     z-index: 12450;
     position: fixed;
     top: 0;

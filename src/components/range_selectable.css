@@ -1,8 +1,8 @@
-.range-selector {
+.rs-range-selector {
     display: flex;
     width: 26rem;
 }
-.iso-weeks {
+.rs-iso-weeks {
     display: flex;
     flex-direction: column;
     width: 2rem;
@@ -10,24 +10,24 @@
     color: #ccc;
     margin-right: 1rem;
 }
-.days-grid {
+.rs-days-grid {
     display: flex;
     flex-direction: column;
     width: 24rem;
     justify-content: space-between;
 }
-.week {
+.rs-week {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.week-abbr {
+.rs-week-abbr {
     color: #ccc;
 }
-.weekDays {
+.rs-weekDays {
     font-weight: bold;
 }
-.day {
+.rs-day {
     width: 2rem;
     height: 2rem;
     border-radius: 0.4rem;
@@ -38,36 +38,36 @@
     min-width: 3.2rem;
     line-height: 2rem;
 }
-.day:hover{
+.rs-day:hover{
     background-color: #eee;
     border-color: transparent;
     color: inherit;
 }
-.active:hover{
+.rs-active:hover{
     background-color: #357ebd;
     border-color: transparent;
     color: #fff;
 }
-.day.disabled, .day.disabled:hover {
+.rs-day.disabled, .rs-day.rs-disabled:hover {
     color: #ccc;
     background-color: transparent;
     border-color: transparent;
     cursor: default;
 }
-.other-month{
+.rs-other-month{
     background-color: #fff;
     border-color: transparent;
     color: #999;
 }
 
-.range {
+.rs-range {
     background-color: #ebf4f8;
     border-color: transparent;
     color: #000;
     border-radius: 0;
 }
 
-.active, .range.active {
+.rs-active, .rs-range.rs-active {
     background-color: #357ebd;
     border-color: transparent;
     color: #fff;

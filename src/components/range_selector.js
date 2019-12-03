@@ -64,22 +64,22 @@ export default {
         setMonth,
         setYear
     },
-    template: `<div class="range-selector">
-    <div class="iso-weeks">
-        <div class="day week-abbr">W</div>
-        <div class="day" v-for="isoWeek in isoWeeks">{{isoWeek.index}}</div>
+    template: `<div class="ra-range-selector">
+    <div class="ra-iso-weeks">
+        <div class="ra-day ra-week-abbr">W</div>
+        <div class="ra-day" v-for="isoWeek in isoWeeks">{{isoWeek.index}}</div>
     </div>
-    <div class="days-grid">
-        <div class="week weekDays"><div class="day" v-for="day in ('mo_tu_we_th_fr_sa_su').split('_')">{{day}}</div></div>
-        <div v-for="isoWeek in isoWeeks" class="week">
+    <div class="ra-days-grid">
+        <div class="ra-week ra-weekDays"><div class="ra-day" v-for="day in ('mo_tu_we_th_fr_sa_su').split('_')">{{day}}</div></div>
+        <div v-for="isoWeek in isoWeeks" class="ra-week">
             <div
                     v-for="day in isoWeek.days"
                     @click="(setDate(setMonth(setYear( activeDate, getYear(day.date)), getMonth(day.date)), getDate(day.date)) < maxDate) && $emit('changeDate', setDate(setMonth(setYear( activeDate, getYear(day.date)), getMonth(day.date)), getDate(day.date))) && (!day.isActiveMonth && $emit('changeView', setMonth(setYear( viewDate, getYear(day.date)), getMonth(day.date))))"
-                    class="day"
+                    class="ra-day"
                     :class="{
-                        'other-month': !day.isActiveMonth,
-                        'active': (!!activeDate && (getDate(day.date) === getDate(activeDate)) && (getMonth(day.date) === getMonth(activeDate)) && (getYear(day.date) === getYear(activeDate))),
-                        disabled: (setDate(setMonth(setYear( activeDate, getYear(day.date)), getMonth(day.date)), getDate(day.date)) > maxDate)
+                        'ra-other-month': !day.isActiveMonth,
+                        'ra-active': (!!activeDate && (getDate(day.date) === getDate(activeDate)) && (getMonth(day.date) === getMonth(activeDate)) && (getYear(day.date) === getYear(activeDate))),
+                        'ra-disabled': (setDate(setMonth(setYear( activeDate, getYear(day.date)), getMonth(day.date)), getDate(day.date)) > maxDate)
                     }">
                 {{day.day}}
             </div>

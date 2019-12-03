@@ -1,19 +1,19 @@
-.increment-container {
+.ni-increment-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.increment-value {
+.ni-increment-value {
     font-size: 1.6rem;
     color: #212529;
     text-align: center;
 }
-.increment-icon {
+.ni-increment-icon {
     align-self: center;
     font-size: 2rem;
     color: #212529;
 }
-.increment-block {
+.ni-increment-block {
     display: flex;
     justify-content: center;
     cursor: pointer;

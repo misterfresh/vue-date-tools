@@ -1,10 +1,10 @@
-.dtr-validation {
+.va-dtr-validation {
     display: flex;
     flex-direction: row;
     padding: 1rem;
     justify-content: flex-end;
 }
-.button {
+.va-button {
     font-family: 'proximaMedium', sans-serif;
     text-transform: none;
     overflow: visible;
@@ -30,7 +30,7 @@
     height: 3.2rem;
     margin-right: 0.5rem;
 }
-.apply {
+.va-apply {
     color: #fff;
     background-color: #32d13d;
     border-color: #32d13d;

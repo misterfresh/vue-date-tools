@@ -1,12 +1,12 @@
-.input-container {
+.di-input-container {
     position: relative;
     display: block;
 }
-.input-container .date-input {
+.di-input-container .date-input {
     border-radius: 0.4rem;
     padding-left: 3.8rem;
 }
-.input-container input{
+.di-input-container input{
     height: 3rem;
     line-height: 3rem;
     display: block;
@@ -16,21 +16,21 @@
     width: 100%;
     outline: 0;
 }
-.input-container input:focus{
+.di-input-container input:focus{
     outline: 0;
 }
-.input-container input{
+.di-input-container input{
     border: 1px solid #ccc;
 }
-.input-container input.focused {
+.di-input-container input.focused {
     border: 1px solid #08c;
 }
-.input-container i {
+.di-input-container i {
     align-self: center;
     padding: 0;
     margin: 0;
 }
-.input-icon-container{
+.di-input-icon-container{
     position: absolute;
     left: 0rem;
     padding: 0;

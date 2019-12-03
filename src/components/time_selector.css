@@ -1,4 +1,4 @@
-.time-selector {
+.ts-time-selector {
     display: flex;
     padding: 1rem;
     width: 26rem;
@@ -6,11 +6,11 @@
     justify-content: space-between;
 }
 
-.timeselect {
+.ts-timeselect {
     counter-reset: option;
 }
 
-.timeoption {
+.ts-timeoption {
     background-color: #fff;
     color: #000;
     width: 5rem;
@@ -19,24 +19,24 @@
     padding-top: 0.2rem;
 }
 
-.timeoption:hover {
+.ts-timeoption:hover {
     background-color: #357ebd;
     color: #fff;
 }
 
-.timeoption:before {
+.ts-timeoption:before {
     content: counter(option, decimal-leading-zero);
     margin-right: 0.25rem;
 }
-.timeoption.disabled, .timeoption.disabled:hover{
+.ts-timeoption.disabled, .ts-timeoption.ts-disabled:hover{
     color: #fff;
     background-color: #ccc;
 }
 
-.count:before {
+.ts-count:before {
     counter-increment: option;
 }
 
-.clock {
+.ts-clock {
     margin-top: 0.3rem;
 }

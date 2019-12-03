@@ -45,10 +45,10 @@ export default {
             }
         }
     },
-    template: `<div class="select" :id="id">
-    <div @click="(hasFocus = true) && (scrollToElement())" :title="title" class="value">{{value}}</div>
-    <div v-if="hasFocus" class="underlay" @click="hasFocus = false"></div>
-    <div class="options" :class="{visible: hasFocus}" :id="id + '_options'">
+    template: `<div class="bs-select" :id="id">
+    <div @click="(hasFocus = true) && (scrollToElement())" :title="title" class="bs-value">{{value}}</div>
+    <div v-if="hasFocus" class="bs-underlay" @click="hasFocus = false"></div>
+    <div class="bs-options" :class="{visible: hasFocus}" :id="id + '_options'">
         <template
                 v-for="(option, index) in Object.keys(options)"
         >
@@ -63,7 +63,7 @@ export default {
             >
                 <div
                         @click="(!optionDisabled(option)) && $emit('change', parseInt(option)) && (selected = id + '_' + index) && (hasFocus = false)"
-                        class="option"
+                        class="bs-option"
                         :id="id + '_' + index"
                         :class="{
                             disabled: optionDisabled(option)

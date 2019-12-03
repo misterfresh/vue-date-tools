@@ -1,4 +1,4 @@
-.month-selector {
+.ms-month-selector {
     display: flex;
     margin-left: 3.5rem;
     width: 22rem;
@@ -7,11 +7,11 @@
     align-items: center;
 }
 
-.month-select {
+.ms-month-select {
     width: 8rem;
 }
 
-.navigation-button {
+.ms-navigation-button {
     background: transparent;
 
     outline: none;
@@ -28,15 +28,15 @@
     justify-content: center;
 }
 
-.nav-icon {
+.ms-nav-icon {
     align-self: center;
 }
 
-.navigation-button:hover {
+.ms-navigation-button:hover {
     background-color: #eee;
 }
 
-.navigation-button:disabled {
+.ms-navigation-button:disabled {
     background-color: #ddd;
     color: #eee
 }
