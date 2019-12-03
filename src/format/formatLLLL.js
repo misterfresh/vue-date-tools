@@ -20,11 +20,11 @@ export default function formatLLLL(date){
     }
     const year = getYear(date)
     let month = getMonth(date)
-    const months = t('daterangepicker.months.full').split('_')
+    const months = ('january_february_march_april_may_june_july_august_september_october_november_december').split('_')
     month = months[month]
 
     let day = getDate(date)
-    const daysOfWeek = t('daterangepicker.days.full').split('_')
+    const daysOfWeek = ('monday_tuesday_wednesday_thursday_friday_saturday_sunday').split('_')
     let dayOfWeek = daysOfWeek[getDay(date)]
     if(day < 10){
         day = '0' + day

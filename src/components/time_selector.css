@@ -1,0 +1,42 @@
+.time-selector {
+    display: flex;
+    padding: 1rem;
+    width: 26rem;
+    height: 3.5rem;
+    justify-content: space-between;
+}
+
+.timeselect {
+    counter-reset: option;
+}
+
+.timeoption {
+    background-color: #fff;
+    color: #000;
+    width: 5rem;
+    height: 2rem;
+    padding-left: 0.5rem;
+    padding-top: 0.2rem;
+}
+
+.timeoption:hover {
+    background-color: #357ebd;
+    color: #fff;
+}
+
+.timeoption:before {
+    content: counter(option, decimal-leading-zero);
+    margin-right: 0.25rem;
+}
+.timeoption.disabled, .timeoption.disabled:hover{
+    color: #fff;
+    background-color: #ccc;
+}
+
+.count:before {
+    counter-increment: option;
+}
+
+.clock {
+    margin-top: 0.3rem;
+}

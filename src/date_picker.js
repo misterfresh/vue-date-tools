@@ -102,13 +102,13 @@ export default {
     },
     template: `
     <div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
-    <div v-if="!!label" class="label">{{t(label)}}</div>
+    <div v-if="!!label" class="label">{{label}}</div>
     <div class="input-container" :id="'input-container-' + id">
         <input
                 class="date-picker-input"
                 @focus="(hasFocus = true) && scrollToDatePicker()"
                 :value="date | DDMMYYYYHHmmss"
-                :placeholder="!!placeholder ? t(placeholder) : ''"
+                :placeholder="!!placeholder ? placeholder : ''"
                 :style="inputStyle"
                 :id="'date-picker-input-' + id"
                 @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
@@ -148,126 +148,8 @@ export default {
                 @cancel="hasFocus = false"
         />
     </div>
-    <style scoped>
-.date-picker-container {
-    position: relative;
-    display: block;
-    height: 4rem;
-}
-.including-label {
-    height: 6rem;
-}
-
-.input-container {
-    position: relative;
-    height: 4rem;
-}
-
-.date-picker-input {
-    font-size: 1.6rem;
-    padding-top: 0rem;
-    background-color: #fff;
-    border: 1px solid #c0d1d1;
-    text-align: left;
-    padding-left: 3.8rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #303038;
-    border-radius: 0.8rem;
-    line-height: 1.25;
-    height: 4rem;
-}
-
-.date-picker-input:focus {
-    border-color: #51bdba;
-    outline: none;
-    box-shadow: none;
-    position: absolute;
-    z-index: 12351;
-    top: 0;
-    left: 0;
-}
-
-.date-picker-underlay {
-    position: fixed;
-    z-index: 12350;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: #aaa;
-    opacity: 0.2;
-}
-
-.date-picker {
-    position: absolute;
-    z-index: 12400;
-    display: flex;
-    background-color: #fff;
-    border-radius: 0.4rem;
-    padding: 0.4rem;
-    flex-direction: row;
-}
-
-.date-picker-inner {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-icon-container{
-    position: absolute;
-    left: 0;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    height: 4rem;
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-}
-.input-icon-container.focus {
-    z-index: 12352;
-}
-.input-icon {
-    align-self: center;
-    padding: 0;
-    margin: 0;
-}
-
-.top {
-
-}
-
-.bottom {
-    width: 44rem;
-    height: 23rem;
-}
-
-.bottom-left {
-    width: 44rem;
-    height: 23rem;
-    top: 4rem;
-    right: 0;
-}
-
-.left {
-
-}
-
-.right {
-
-}
-
-.label {
-    color: #999;
-    font-size: 1.4rem;
-    padding-left: 15px;
-    height: 20px;
-}
-</style>
 </div>
-    `
+    `,
 }
 
 

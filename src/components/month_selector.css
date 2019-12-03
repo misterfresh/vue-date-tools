@@ -1,0 +1,49 @@
+.month-selector {
+    display: flex;
+    margin-left: 3.5rem;
+    width: 22rem;
+    height: 3.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month-select {
+    width: 8rem;
+}
+
+.navigation-button {
+    background: transparent;
+
+    outline: none;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.4rem;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-icon {
+    align-self: center;
+}
+
+.navigation-button:hover {
+    background-color: #eee;
+}
+
+.navigation-button:disabled {
+    background-color: #ddd;
+    color: #eee
+}
+button:disabled {
+    cursor: default;
+}
+select {
+    height: 2rem;
+    width: 8rem;
+}

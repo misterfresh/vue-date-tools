@@ -20,6 +20,9 @@ http.createServer(function (req, res) {
     if(!req.url.includes('.') && !req.url.includes('deps/date-fns')){
         req.url += '.js'
     }
+    if(req.url.includes('deps') && req.url.endsWith('index.js')){
+        req.url = req.url.replace('deps','deps/date-fns')
+    }
     const parsedUrl = url.parse(req.url);
     // extract URL path
     let pathname = `.${parsedUrl.pathname}`;

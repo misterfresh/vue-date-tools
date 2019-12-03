@@ -58,8 +58,8 @@ export default {
         <span v-else><</span>
     </button>
     <base-select
-            :options="t('daterangepicker.months.abbr').split('_')"
-            :value="t('daterangepicker.months.abbr').split('_')[activeMonth]"
+            :options="('jan._feb._mar._apr._may_june_july_aug._sept._oct._nov._dec.').split('_')"
+            :value="('jan._feb._mar._apr._may_june_july_aug._sept._oct._nov._dec.').split('_')[activeMonth]"
             :optionDisabled="option=> (setMonth(viewDate, option) > maxDate)"
             @change="$emit('changeView', setMonth(viewDate,$event))"
             class="month-select"
@@ -79,56 +79,5 @@ export default {
         <i v-if="nextMonthIconClass" class="nav-icon" :class="nextMonthIconClass"/>
         <span v-else>></span>
     </button>
-    <style scoped>
-.month-selector {
-    display: flex;
-    margin-left: 3.5rem;
-    width: 22rem;
-    height: 3.5rem;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.month-select {
-    width: 8rem;
-}
-
-.navigation-button {
-    background: transparent;
-
-    outline: none;
-    cursor: pointer;
-    color: #000;
-    font-weight: bold;
-    padding-left: 0;
-    padding-right: 0;
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 0.4rem;
-    border: 1px solid transparent;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-icon {
-    align-self: center;
-}
-
-.navigation-button:hover {
-    background-color: #eee;
-}
-
-.navigation-button:disabled {
-    background-color: #ddd;
-    color: #eee
-}
-button:disabled {
-    cursor: default;
-}
-select {
-    height: 2rem;
-    width: 8rem;
-}
-</style>
 </div>`
 }

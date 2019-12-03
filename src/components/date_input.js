@@ -67,52 +67,5 @@ export default {
     <div class="input-icon-container" :class="{focused: hasFocus}">
         <i :class="'input-icon icon-calendar'"/>
     </div>
-    <style>
-.input-container {
-    position: relative;
-    display: block;
-}
-.input-container .date-input {
-    border-radius: 0.4rem;
-    padding-left: 3.8rem;
-}
-.input-container input{
-    height: 3rem;
-    line-height: 3rem;
-    display: block;
-    vertical-align: middle;
-    margin: 0 0 0.5rem 0;
-    padding: 0 0.6rem 0 2.8rem;
-    width: 100%;
-    outline: 0;
-}
-.input-container input:focus{
-    outline: 0;
-}
-.input-container input{
-    border: 1px solid #ccc;
-}
-.input-container input.focused {
-    border: 1px solid #08c;
-}
-.input-container i {
-    align-self: center;
-    padding: 0;
-    margin: 0;
-}
-.input-icon-container{
-    position: absolute;
-    left: 0rem;
-    padding: 0;
-    margin: 0;
-    top: 0rem;
-    height: 3rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-
-}
-</style>
 </div>`
 }

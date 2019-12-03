@@ -18,7 +18,7 @@ export default function formatDDMMMMYYYYHHhmmss(date){
     }
     const year = getYear(date)
     let month = getMonth(date)
-    const months = t('daterangepicker.months.full').split('_')
+    const months = ('january_february_march_april_may_june_july_august_september_october_november_december').split('_')
     month = months[month]
 
     let day = getDate(date)

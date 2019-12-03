@@ -26,33 +26,33 @@ export default {
         <div>
     <div>
         <div>{{ datePickerDate }}</div>
-        <date_picker
+        <date-picker
                 label="date-picker"
-        ></date_picker>
+        ></date-picker>
     </div>
     <div>
         <div>{{ datePickerArrows }}</div>
-        <date_picker_arrows
+        <date-picker-arrows
 
-        ></date_picker_arrows>
+        ></date-picker-arrows>
     </div>
     <div>
         <div>{{ dateRangePickerDates }}</div>
-        <date_range_picker
+        <date-range-picker
 
-        ></date_range_picker>
+        ></date-range-picker>
     </div>
     <div>
         <div>{{ dateRangePickerSuggestionsDates }}</div>
-        <date_range_picker_suggestions
+        <date-range-picker-suggestions
 
-        ></date_range_picker_suggestions>
+        ></date-range-picker-suggestions>
     </div>
     <div>
         <div>{{ timePickerTime }}</div>
-        <time_picker
+        <time-picker
 
-        ></time_picker>
+        ></time-picker>
     </div>
 </div>
     `

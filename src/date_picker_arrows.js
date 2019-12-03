@@ -103,7 +103,7 @@ export default {
     },
 
     template: `<div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
-    <div v-if="!!label" class="label">{{t(label)}}</div>
+    <div v-if="!!label" class="label">{{label}}</div>
     <div class="input-container" :id="'input-container-' + id">
         <button class="navigation previous" :disabled="disabled" @click="()=>{$emit('change', addDays(date, -1)); hasFocus = false}">
             <i class="icon-chevron-left direction"></i>
@@ -112,7 +112,7 @@ export default {
                 class="date-picker-input"
                 @focus="(hasFocus = true) && scrollToDatePicker()"
                 :value="date | DDMMYYYY"
-                :placeholder="!!placeholder ? t(placeholder) : ''"
+                :placeholder="!!placeholder ? placeholder : ''"
                 :style="inputStyle"
                 :class="{'is-disabled':disabled}"
                 :id="'date-picker-input-' + id"
@@ -152,211 +152,6 @@ export default {
             />
         </div>
     </div>
-    <style scoped>
-.date-picker-container {
-    position: relative;
-    display: block;
-    height: 4rem;
-}
-.including-label {
-    height: 6rem;
-}
-
-.input-container {
-    position: relative;
-    height: 4rem;
-    width: 22rem;
-    display: flex;
-}
-
-.date-picker-input {
-    text-align: left;
-    padding-left: 3.8rem;
-    fill: transparent;
-    color: #7b4199;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    width: 14rem;
-    line-height: 1.6rem;
-    border-radius: 0rem;
-    border: 2px solid #7b4199;
-    font-size: 1.8rem;
-    font-weight: normal;
-    box-sizing: border-box;
-    height: 4rem;
-    border-left: none;
-    border-right: none;
-    padding-top: 0rem;
-
-}
-
-.date-picker-input:focus {
-    border-color: #7b4199;
-    background-color: #7b4199;
-    color: #fff;
-    outline: none;
-    box-shadow: none;
-    position: absolute;
-    z-index: 12351;
-    top: 0;
-    left: 4rem;
-    width: 14rem;
-}
-
-.date-picker-underlay {
-    position: fixed;
-    z-index: 12350;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: #aaa;
-    opacity: 0;
-}
-
-.date-picker {
-    position: absolute;
-    z-index: 12400;
-    display: flex;
-    background-color: #fff;
-    border-radius: 0.4rem;
-    padding: 0.4rem;
-    flex-direction: row;
-}
-
-.date-picker-inner {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-icon-container{
-    position: absolute;
-    left: 4rem;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    height: 4rem;
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-}
-.input-icon-container.focus {
-    z-index: 12352;
-}
-.input-icon-container.focus i{
-    color: #fff;
-}
-.input-icon {
-    align-self: center;
-    padding: 0;
-    margin: 0;
-    color: #7b4199;
-}
-.input-icon-focus {
-    color: #fff;
-}
-.input-container:hover input{
-    color: #fff;
-    border-color: #7b4199;
-    background-color: #7b4199;
-}
-.input-container:hover i{
-    color: #fff;
-}
-.top {
-
-}
-
-.bottom {
-    width: 30rem;
-    height: 20rem;
-    top: 4rem;
-    left: -4rem;
-}
-
-.bottom-left {
-    width: 30rem;
-    height: 20rem;
-    top: 4rem;
-    right: 0;
-}
-
-.left {
-
-}
-
-.right {
-
-}
-
-.label {
-    color: #999;
-    font-size: 1.4rem;
-    padding-left: 15px;
-    height: 20px;
-}
-
-.navigation{
-    background-color: #7b4199;
-    border: 2px solid #7b4199;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    border-left: none;
-    border-right: none;
-    width: 4rem;
-    height: 4rem;
-    margin: 0;
-    padding: 0;
-    font-size: 1.6rem;
-    outline: 0;
-}
-.navigation:hover{
-    background-color: #9a50bf;
-    border: 2px solid #9a50bf;
-    border-left: none;
-    border-right: none;
-}
-.navigation:hover i {
-    color: #fff;
-}
-.navigation:disabled {
-    border: 2px solid rgba(123, 65, 153, 0.5);
-    fill: rgba(123, 65, 153, 0.5);
-    background-color: rgba(123, 65, 153, 0.5);
-    cursor: not-allowed;
-}
-.previous {
-    border-top-left-radius: 2rem;
-    border-bottom-left-radius: 2rem;
-}
-.previous:disabled {
-    border-right: none;
-}
-.next {
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-}
-.next:disabled {
-    border-left: none;
-}
-.next.focus {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-.direction {
-    background-color: transparent;
-    color: #fff;
-    align-self: center;
-    font-size: 1.6rem;
-    font-weight: bold;
-}
-</style>
 </div>`
 }
 

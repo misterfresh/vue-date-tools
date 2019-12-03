@@ -76,7 +76,15 @@ export default {
             fullWidth: 0,
             viewRange: [startOfMonth(typeof this.dateRange[0] !== 'undefined' && this.dateRange[0] instanceof Date ? this.dateRange[0] : addMonths(new Date(), -1)), startOfMonth((typeof this.dateRange[1] !== 'undefined' && this.dateRange[1] instanceof Date) ? this.dateRange[1] : new Date())],
             hoveredDate: null,
-            activeSuggestion: 'custom'
+            activeSuggestion: 'custom',
+            ranges: {
+                today: 'Today',
+                yesterday: 'Yesterday',
+                last7Days: 'Last 7 days',
+                last30Days: 'Last 30 days',
+                lastMonth: 'Last month',
+                custom: 'Custom',
+            }
         }
     },
     components: {
@@ -162,14 +170,14 @@ export default {
     },
 
     template: `<div class="date-picker-container" :class="{'including-label': !!label, 'as-input': !!isInput}" :id="'date-picker-container-' + id">
-    <div v-if="!!label" class="label">{{t(label)}}<span v-if="!!required" class="required">*</span></div>
+    <div v-if="!!label" class="label">{{label}}<span v-if="!!required" class="required">*</span></div>
     <div class="input-container" :id="'input-container-' + id">
         <input
                 class="date-picker-input"
                 :class="{focus: hasFocus, icon: !!icon}"
                 @focus="(hasFocus = true) && scrollToDatePicker()"
                 :value="dateRange | DDMMYYYYDDMMYYYY"
-                :placeholder="!!placeholder ? t(placeholder) : ''"
+                :placeholder="!!placeholder ? placeholder : ''"
                 :style="inputStyle"
                 :id="'date-picker-input-' + id"
                 @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
@@ -256,7 +264,7 @@ export default {
                 activeSuggestion = label
 
             }">
-                {{t('daterangepicker.ranges.' + label)}}
+                {{ ranges[label] }}
             </div>
             <validation
                     @apply="$emit('change', activeRange) && (hasFocus = false)"
@@ -264,215 +272,5 @@ export default {
             />
         </div>
     </div>
-    <style scoped>
-.date-picker-container {
-    position: relative;
-    display: block;
-    height: 4rem;
-    width: 28rem;
-    margin: 0;
-    padding: 0;
-}
-.including-label {
-    height: 6rem;
-}
-
-.input-container {
-    position: relative;
-    height: 4rem;
-    width: 28rem;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
-.date-picker-input {
-
-    padding-top: 0rem;
-    background-color: #fff;
-
-    text-align: left;
-    padding-left: 2rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #7B4199;
-
-    height: 4rem;
-    line-height: 1.6rem;
-    border-radius: 2rem;
-    border: 2px solid #7B4199;
-    font-size: 1.8rem;
-    width: 28rem;
-    cursor: pointer;
-    outline:none;
-
-}
-
-.date-picker-input.icon {
-    padding-left: 4rem;
-}
-
-.date-picker-input:focus {
-    border-color: #7B4199;
-    background-color: #7B4199;
-    color: #fff;
-    outline: none;
-    box-shadow: none;
-    position: absolute;
-    z-index: 12351;
-    top: 0;
-    left: 0;
-}
-
-.date-picker-underlay {
-    position: fixed;
-    z-index: 12350;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: transparent;
-    opacity: 0.2;
-}
-
-.date-picker {
-    position: absolute;
-    z-index: 12400;
-    display: flex;
-    background-color: #fff;
-    border-radius: 0.4rem;
-    padding: 0.4rem;
-    flex-direction: row;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.date-picker-inner {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-icon-container{
-    position: absolute;
-    left: 0.4rem;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    height: 4rem;
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-
-}
-.input-icon-container.focus {
-    z-index: 12352;
-}
-.input-icon-container.action{
-    left: unset;
-    right: 0.4rem;
-}
-.input-icon {
-    align-self: center;
-    padding: 0;
-    margin: 0;
-    color: #7B4199;
-}
-.input-container:hover .date-picker-input, .input-container:hover .input-icon, .input-icon.focus, .date-picker-input.focus{
-    color: #fff;
-    background-color: #7B4199;
-}
-.top {
-
-}
-
-.bottom {
-    width: 76rem;
-    height: 24rem;
-}
-
-.bottom-left {
-    width: 76rem;
-    height: 24rem;
-    top: 4rem;
-    right: 0;
-}
-
-.center {
-    width: 76rem;
-    height: 24rem;
-    left: -24rem;
-}
-
-.left {
-    width: 60rem;
-    height: 24rem;
-    right: 0;
-}
-
-.right {
-
-}
-
-.label {
-    color: #999;
-    font-size: 1.4rem;
-    padding-left: 15px;
-    height: 20px;
-}
-
-.required {
-    color: #d9534f;
-    margin-left: 4px;
-}
-
-.as-input .date-picker-input{
-    font-size: 1.6rem;
-    border-radius: 0.8rem;
-    padding-top: 0.8rem;
-    padding-right: 1.2rem;
-    padding-bottom: 0.8rem;
-    padding-left: 1.2rem;
-    color: #303038;
-    border: 1px solid #ced4da;
-    background-color: #fff;
-}
-
-.as-input .date-picker-container, .as-input .input-container, .as-input .date-picker-input {
-    width: 21rem;
-}
-
-.as-input .input-container:hover .date-picker-input, .as-input .input-container:hover .input-icon, .as-input .input-icon.focus, .as-input .date-picker-input.focus{
-    color: #303038;
-    background-color: #fff;
-    border: 1px solid #51bdba;
-}
-
-.date-picker-suggestions {
-    width: 16rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.date-picker-suggestion {
-    font-size: 1.3rem;
-    background-color: #f5f5f5;
-    border: 1px solid #f5f5f5;
-    border-radius: 0.4rem;
-    color: #08c;
-    padding: 0.3rem 1.2rem;
-    margin-bottom: 0.8rem;
-    cursor: pointer;
-
-}
-.date-picker-suggestion.active {
-    background-color: #08c;
-    border: 1px solid #08c;
-    color: #fff;
-}
-</style>
 </div>`
 }
