@@ -12,6 +12,7 @@ import setYear from '/deps/date-fns/setYear'
 import debounce from '/deps/lodash.debounce.js'
 import addMonths from "/deps/date-fns/addMonths";
 import addDays from '/deps/date-fns/addDays'
+import formatDDMMYYYYDDMMYYYY from "./format/formatDDMMYYYYDDMMYYYY";
 
 export default {
     name: 'date-range-picker-suggestions',
@@ -167,6 +168,10 @@ export default {
     },
     mounted: function(){
         this.fullWidth = document.getElementById('input-container-' + this.id).offsetWidth
+    },
+
+    filters: {
+        'DDMMYYYYDDMMYYYY': formatDDMMYYYYDDMMYYYY
     },
 
     template: `<div class="date-picker-container" :class="{'including-label': !!label, 'as-input': !!isInput}" :id="'date-picker-container-' + id">

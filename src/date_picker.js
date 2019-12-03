@@ -10,6 +10,7 @@ import getYear from '/deps/date-fns/getYear'
 import setMonth from '/deps/date-fns/setMonth'
 import setYear from '/deps/date-fns/setYear'
 import debounce from '/deps/lodash.debounce.js'
+import formatDDMMYYYYHHmmss from './format/formatDDMMYYYYHHmmss'
 
 export default {
     name: 'date-picker',
@@ -90,6 +91,11 @@ export default {
                 })
             }
         }
+    },
+
+    filters: {
+        'DDMMYYYYHHmmss': formatDDMMYYYYHHmmss,
+
     },
 
     created: function(){

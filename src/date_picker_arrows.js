@@ -9,6 +9,7 @@ import setMonth from '/deps/date-fns/setMonth'
 import setYear from '/deps/date-fns/setYear'
 import debounce from '/deps/lodash.debounce.js'
 import addDays from "/deps/date-fns/addDays"
+import formatDDMMYYYY from './format/formatDDMMYYYY'
 
 export default {
     name: 'date-picker-arrows',
@@ -100,6 +101,10 @@ export default {
     mounted: function(){
         this.inputWidth = document.getElementById('date-picker-input-' + this.id).offsetWidth
         this.containerWidth = document.getElementById('input-container-' + this.id).offsetWidth
+    },
+
+    filters: {
+        'DDMMYYYY': formatDDMMYYYY
     },
 
     template: `<div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">

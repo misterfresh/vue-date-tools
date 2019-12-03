@@ -2,6 +2,7 @@ import NumberIncrement from './components/number_increment'
 import uuid from '/deps/uuid'
 import getTimeFromHHmm from './parse/getTimeFromHHmm'
 import debounce from '/deps/lodash.debounce.js'
+import formatHHmm from './format/formatHHmm'
 
 export default {
     name: 'time-picker',
@@ -73,6 +74,10 @@ export default {
 
     mounted: function(){
         this.fullWidth = document.getElementById('date-picker-input-' + this.id).offsetWidth
+    },
+
+    filters: {
+        'HHmm': formatHHmm
     },
 
     template: `<div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
