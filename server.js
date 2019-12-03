@@ -17,11 +17,17 @@ http.createServer(function (req, res) {
         return;
     }
     // parse URL
+    if(!req.url.includes('.') && !req.url.includes('deps/date-fns')){
+        req.url += '.js'
+    }
     const parsedUrl = url.parse(req.url);
     // extract URL path
     let pathname = `.${parsedUrl.pathname}`;
     // based on the URL path, extract the file extension. e.g. .js, .doc, ...
-    const ext = path.parse(pathname).ext;
+    let ext = '.js'
+    if(!req.url.includes('deps/date-fns')){
+        ext = path.parse(pathname).ext;
+    }
     // maps file extention to MIME typere
     const map = {
         '.ico': 'image/x-icon',
@@ -65,6 +71,7 @@ http.createServer(function (req, res) {
             } else {
                 // if the file is found, set Content-type and send data
                 res.setHeader('Content-type', map[ext] || 'text/plain' );
+
                 res.end(data);
             }
         });

@@ -1,9 +1,9 @@
 // MM DD, YYYY
 
-import getYear from '../date/getYear'
-import getMonth from '../date/getMonth'
-import getDate from '../date/getDate'
-import capitalize from 'lib/capitalize'
+import getYear from '/deps/date-fns/getYear'
+import getMonth from '/deps/date-fns/getMonth'
+import getDate from '/deps/date-fns/getDate'
+import capitalize from '/deps/capitalize'
 
 export default function formatMMDDYYYY(date){
 

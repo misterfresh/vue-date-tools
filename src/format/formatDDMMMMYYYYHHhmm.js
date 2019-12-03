@@ -1,11 +1,11 @@
 // DD MMMM YYYY - HH[h]mm
 
-import getYear from '../date/getYear'
-import getMonth from '../date/getMonth'
-import getDate from '../date/getDate'
-import getHours from '../date/getHours'
-import getMinutes from '../date/getMinutes'
-import getSeconds from '../date/getSeconds'
+import getYear from '/deps/date-fns/getYear'
+import getMonth from '/deps/date-fns/getMonth'
+import getDate from '/deps/date-fns/getDate'
+import getHours from '/deps/date-fns/getHours'
+import getMinutes from '/deps/date-fns/getMinutes'
+import getSeconds from '/deps/date-fns/getSeconds'
 
 export default function formatDDMMMMYYYYHHhmm(date){
 
