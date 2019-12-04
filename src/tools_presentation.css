@@ -1,0 +1,21 @@
+.to-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.to-example-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.to-item-container{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 45%;
+}
