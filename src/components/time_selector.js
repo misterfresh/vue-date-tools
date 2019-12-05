@@ -34,8 +34,8 @@ export default {
         getMinutes,
         getSeconds
     },
-    template: `<div class="ts-time-selector">
-    <i v-if="clockIconClass" class="ts-clock" :class="clockIconClass"/>
+    template: `<div class="time-selector">
+    <i v-if="clockIconClass" class="clock" :class="clockIconClass"/>
     <base-select
             title="Hour"
             :options="Array(24).fill().map( (_, hour) => parseInt(hour))"
@@ -49,16 +49,16 @@ export default {
             :options="Array(60).fill().map( (_, minutes) => parseInt(minutes))"
             :value="getMinutes(activeDate) < 10 ? ('0' + getMinutes(activeDate)) : getMinutes(activeDate)"
             @change="$emit('changeTime', setMinutes(activeDate, $event))"
-            :class="'ts-timeselect'"
+            :class="'timeselect'"
             :optionDisabled="option=> (setMinutes(activeDate, option) > maxDate)"
     >
         <template slot="option" slot-scope="props">
             <div
                     @click="() => props.update(props.option, props.id)"
                     :class="{
-                        'ts-timeoption': true,
-                        'ts-count': !!props.index,
-                        'ts-disabled': props.disabled
+                        'timeoption': true,
+                        'count': !!props.index,
+                        'disabled': props.disabled
                     }"
                     :id="props.id"
             >&nbsp;
@@ -71,16 +71,16 @@ export default {
             :options="Array(60).fill().map( (_, seconds) => parseInt(seconds))"
             :value="getSeconds(activeDate) < 10 ? ('0' + getSeconds(activeDate)) : getSeconds(activeDate)"
             @change="$emit('changeTime', setSeconds(activeDate, $event))"
-            :class="'ts-timeselect'"
+            :class="'timeselect'"
             :optionDisabled="option=> (setSeconds(activeDate, option) > maxDate)"
     >
         <template slot="option" slot-scope="props">
             <div
                     @click="() => props.update(props.option, props.id)"
                     :class="{
-                        'ts-timeoption': true,
-                        'ts-count': !!props.index,
-                        'ts-disabled': props.disabled
+                        'timeoption': true,
+                        'count': !!props.index,
+                        'disabled': props.disabled
                     }"
                     :id="props.id"
             >&nbsp;

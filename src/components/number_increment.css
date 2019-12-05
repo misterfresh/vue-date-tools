@@ -1,23 +1,25 @@
-.ni-increment-container {
+.number-increment-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.ni-increment-value {
+.number-increment-container .increment-value {
     font-size: 1.6rem;
     color: #212529;
     text-align: center;
 }
-.ni-increment-icon {
+.number-increment-container .increment-icon {
     align-self: center;
     font-size: 2rem;
     color: #212529;
 }
-.ni-increment-block {
+.number-increment-container .increment-block {
     display: flex;
     justify-content: center;
     cursor: pointer;
     line-height: 1;
     letter-spacing: 0;
-
+}
+.number-increment-container .default-icon {
+    transform: rotate(90deg);
 }

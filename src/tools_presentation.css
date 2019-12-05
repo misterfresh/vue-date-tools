@@ -1,21 +1,23 @@
-.to-container{
+.tools-presentation{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
+
 }
 
-.to-example-container{
+.tools-presentation .example-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-.to-item-container{
+.tools-presentation .item-container{
     display: flex;
     justify-content: left;
     align-items: left;
-    width: 45%;
+    width: 95%;
+    margin-bottom: 1rem;
 }

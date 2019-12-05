@@ -9,6 +9,10 @@ import startOfDay from '/deps/date-fns/startOfDay'
 import endOfDay from '/deps/date-fns/endOfDay'
 import startOfMonth from '/deps/date-fns/startOfMonth'
 import endOfMonth from '/deps/date-fns/endOfMonth'
+import formatDDMMYYYYHHmmss from "./format/formatDDMMYYYYHHmmss";
+import formatDDMMYYYY from "./format/formatDDMMYYYY";
+import formatDDMMYYYYDDMMYYYY from "./format/formatDDMMYYYYDDMMYYYY";
+import formatHHmm from "./format/formatHHmm";
 
 export default {
     name: 'tools-presentation',
@@ -35,43 +39,47 @@ export default {
         addDays, addMonths
     },
 
-    filters: {},
+    filters: {
+        'DDMMYYYYHHmmss': formatDDMMYYYYHHmmss,
+        'DDMMYYYY': formatDDMMYYYY,
+        'DDMMYYYYDDMMYYYY': formatDDMMYYYYDDMMYYYY,
+        'HHmm': formatHHmm
+    },
 
     template: `
-        <div class="to-container">
-            <div class="to-example-container">
-                <div class="to-item-container">{{ datePickerDate }}</div>
-                <div class="to-item-container">
+        <div class="tools-presentation">
+            <div class="example-container">
+                <div class="item-container">
                     <date-picker
                         label="Date Picker"
                         :date="datePickerDate"
                         @change="range => {datePickerDate = range;}"
                     ></date-picker>
                 </div>
+                <div class="item-container">App state store value: {{ datePickerDate | DDMMYYYYHHmmss }}</div>
             </div>
-            <div class="to-example-container">
-                <div class="to-item-container">{{ datePickerDateArrows }}</div>
-                <div class="to-item-container">
+            <div class="example-container">
+                <div class="item-container">
                     <date-picker-arrows
                         label="Date Picker Arrows"
                         :date="datePickerDateArrows"
                         @change="range => {datePickerDateArrows = range;}"
                     ></date-picker-arrows>
                 </div>
+                <div class="item-container">App state store value: {{ datePickerDateArrows | DDMMYYYY }}</div>
             </div>
-            <div class="to-example-container">
-                <div class="to-item-container">{{ dateRangePickerDates }}</div>
-                <div class="to-item-container">
+            <div class="example-container">               
+                <div class="item-container">
                     <date-range-picker
                         label="Date Range Picker"
                         :date-range="dateRangePickerDates"
                         @change="range => {dateRangePickerDates = range;}"
                     ></date-range-picker>
                 </div>
+                <div class="item-container">App state store value: {{ dateRangePickerDates | DDMMYYYYDDMMYYYY }}</div>
             </div>
-            <div class="to-example-container">
-                <div class="to-item-container">{{ dateRangePickerSuggestionsDates }}</div>
-                <div class="to-item-container">
+            <div class="example-container">                
+                <div class="item-container">
                     <date-range-picker-suggestions
                         label="Date Range Picker Suggestions"
                         :date-range="dateRangePickerSuggestionsDates"
@@ -86,16 +94,17 @@ export default {
                         }"
                     ></date-range-picker-suggestions>
                 </div>
+                <div class="item-container">App state store value: {{ dateRangePickerSuggestionsDates | DDMMYYYYDDMMYYYY }}</div>
             </div>
-            <div class="to-example-container">
-                <div class="to-item-container">{{ timePickerTime }}</div>
-                <div class="to-item-container">
+            <div class="example-container">               
+                <div class="item-container">
                     <time-picker
                         label="Time Picker"
                         :time="timePickerTime"
                         @change="time=>{timePickerTime = time}"
                     ></time-picker>
                 </div>
+                <div class="item-container">App state store value: {{ timePickerTime | HHmm }}</div>
             </div>
         </div>
     `

@@ -1,8 +1,8 @@
-.ra-range-selector {
+.range-selector {
     display: flex;
     width: 26rem;
 }
-.ra-iso-weeks {
+.range-selector .iso-weeks {
     display: flex;
     flex-direction: column;
     width: 2rem;
@@ -10,24 +10,24 @@
     color: #ccc;
     margin-right: 1rem;
 }
-.ra-days-grid {
+.range-selector .days-grid {
     display: flex;
     flex-direction: column;
     width: 24rem;
     justify-content: space-between;
 }
-.ra-week {
+.range-selector .week {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.ra-week-abbr {
+.range-selector .week-abbr {
     color: #ccc;
 }
-.ra-weekDays {
+.range-selector .weekDays {
     font-weight: bold;
 }
-.ra-day {
+.range-selector .day {
     width: 2rem;
     height: 2rem;
     border-radius: 0.4rem;
@@ -38,28 +38,28 @@
     min-width: 3.2rem;
     line-height: 2rem;
 }
-.ra-day:hover{
+.range-selector .day:hover{
     background-color: #eee;
     border-color: transparent;
     color: inherit;
 }
-.ra-active:hover{
+.range-selector .active:hover{
     background-color: #357ebd;
     border-color: transparent;
     color: #fff;
 }
-.ra-day.ra-disabled, .ra-day.ra-disabled:hover {
+.range-selector .day.disabled,.range-selector .day.disabled:hover {
     color: #ccc;
     background-color: transparent;
     border-color: transparent;
     cursor: default;
 }
-.ra-other-month{
+.range-selector .other-month{
     background-color: #fff;
     border-color: transparent;
     color: #999;
 }
-.ra-active {
+.range-selector .active {
     background-color: #357ebd;
     border-color: transparent;
     color: #fff;

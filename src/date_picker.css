@@ -1,18 +1,18 @@
-.dp-date-picker-container {
+.date-picker {
     position: relative;
     display: block;
     height: 4rem;
 }
-.dp-including-label {
+.date-picker.including-label {
     height: 6rem;
 }
 
-.dp-input-container {
+.date-picker .input-container {
     position: relative;
     height: 4rem;
 }
 
-.dp-date-picker-input {
+.date-picker .date-picker-input {
     font-size: 1.6rem;
     padding-top: 0rem;
     background-color: #fff;
@@ -26,7 +26,7 @@
     height: 4rem;
 }
 
-.dp-date-picker-input:focus {
+.date-picker .date-picker-input:focus {
     border-color: #51bdba;
     outline: none;
     box-shadow: none;
@@ -36,7 +36,7 @@
     left: 0;
 }
 
-.dp-date-picker-underlay {
+.date-picker .date-picker-underlay {
     position: fixed;
     z-index: 12350;
     top: 0;
@@ -49,7 +49,7 @@
     opacity: 0.2;
 }
 
-.dp-date-picker {
+.date-picker-overlay {
     position: absolute;
     z-index: 12400;
     display: flex;
@@ -59,12 +59,12 @@
     flex-direction: row;
 }
 
-.dp-date-picker-inner {
+.date-picker-overlay .date-picker-inner {
     display: flex;
     flex-direction: column;
 }
 
-.dp-input-icon-container{
+.date-picker .input-icon-container{
     position: absolute;
     left: 0;
     padding: 0;
@@ -75,40 +75,40 @@
     display: flex;
     justify-content: center;
 }
-.dp-input-icon-container.focus {
+.date-picker .input-icon-container.focus {
     z-index: 12352;
 }
-.dp-input-icon {
+.date-picker .input-icon {
     align-self: center;
     padding: 0;
     margin: 0;
 }
 
-.dp-top {
+.date-picker-overlay .top {
 
 }
 
-.dp-bottom {
+.date-picker-overlay .bottom {
     width: 44rem;
     height: 23rem;
 }
 
-.dp-bottom-left {
+.date-picker-overlay .bottom-left {
     width: 44rem;
     height: 23rem;
     top: 4rem;
     right: 0;
 }
 
-.dp-left {
+.date-picker-overlay .left {
 
 }
 
-.dp-right {
+.date-picker-overlay .right {
 
 }
 
-.dp-label {
+.date-picker-overlay .label {
     color: #999;
     font-size: 1.4rem;
     padding-left: 15px;

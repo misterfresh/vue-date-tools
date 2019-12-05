@@ -1,20 +1,20 @@
-.da-date-picker-container {
+.date-picker-arrows {
     position: relative;
     display: block;
     height: 4rem;
 }
-.da-including-label {
+.date-picker-arrows.including-label {
     height: 6rem;
 }
 
-.da-input-container {
+.date-picker-arrows .input-container {
     position: relative;
     height: 4rem;
     width: 22rem;
     display: flex;
 }
 
-.da-date-picker-input {
+.date-picker-arrows .date-picker-input {
     text-align: left;
     padding-left: 3.8rem;
     fill: transparent;
@@ -36,7 +36,7 @@
 
 }
 
-.da-date-picker-input:focus {
+.date-picker-arrows .date-picker-input:focus {
     border-color: #7b4199;
     background-color: #7b4199;
     color: #fff;
@@ -49,7 +49,7 @@
     width: 14rem;
 }
 
-.da-date-picker-underlay {
+.date-picker-arrows .date-picker-underlay {
     position: fixed;
     z-index: 12350;
     top: 0;
@@ -62,7 +62,7 @@
     opacity: 0;
 }
 
-.da-date-picker {
+.date-picker-arrows-overlay {
     position: absolute;
     z-index: 12400;
     display: flex;
@@ -72,12 +72,12 @@
     flex-direction: row;
 }
 
-.da-date-picker-inner {
+.date-picker-arrows-overlay .date-picker-inner {
     display: flex;
     flex-direction: column;
 }
 
-.da-input-icon-container{
+.date-picker-arrows .input-icon-container{
     position: absolute;
     left: 4rem;
     padding: 0;
@@ -89,63 +89,63 @@
     justify-content: center;
     pointer-events: none;
 }
-.da-input-icon-container.focus {
+.date-picker-arrows .input-icon-container.focus {
     z-index: 12352;
 }
-.da-input-icon-container.focus i{
+.date-picker-arrows .input-icon-container.focus i{
     color: #fff;
 }
-.da-input-icon {
+.date-picker-arrows .input-icon {
     align-self: center;
     padding: 0;
     margin: 0;
     color: #7b4199;
 }
-.da-input-icon-focus {
+.date-picker-arrows .input-icon-focus {
     color: #fff;
 }
-.da-input-container:hover input{
+.date-picker-arrows .input-container:hover input{
     color: #fff;
     border-color: #7b4199;
     background-color: #7b4199;
 }
-.da-input-container:hover i{
+.date-picker-arrows .input-container:hover i{
     color: #fff;
 }
-.da-top {
+.date-picker-arrows-overlay .top {
 
 }
 
-.da-bottom {
+.date-picker-arrows-overlay .bottom {
     width: 30rem;
     height: 20rem;
     top: 4rem;
     left: -4rem;
 }
 
-.da-bottom-left {
+.date-picker-arrows-overlay .bottom-left {
     width: 30rem;
     height: 20rem;
     top: 4rem;
     right: 0;
 }
 
-.da-left {
+.date-picker-arrows-overlay .left {
 
 }
 
-.da-right {
+.date-picker-arrows-overlay .right {
 
 }
 
-.da-label {
+.date-picker-arrows .label {
     color: #999;
     font-size: 1.4rem;
     padding-left: 15px;
     height: 20px;
 }
 
-.da-navigation{
+.date-picker-arrows .navigation{
     background-color: #7b4199;
     border: 2px solid #7b4199;
     cursor: pointer;
@@ -160,41 +160,41 @@
     font-size: 1.6rem;
     outline: 0;
 }
-.da-navigation:hover{
+.date-picker-arrows .navigation:hover{
     background-color: #9a50bf;
     border: 2px solid #9a50bf;
     border-left: none;
     border-right: none;
 }
-.da-navigation:hover i {
+.date-picker-arrows .navigation:hover i {
     color: #fff;
 }
-.da-navigation:disabled {
+.date-picker-arrows .navigation:disabled {
     border: 2px solid rgba(123, 65, 153, 0.5);
     fill: rgba(123, 65, 153, 0.5);
     background-color: rgba(123, 65, 153, 0.5);
     cursor: not-allowed;
 }
-.da-previous {
+.date-picker-arrows .previous {
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
 }
-.da-previous:disabled {
+.date-picker-arrows .previous:disabled {
     border-right: none;
 }
-.da-next {
+.date-picker-arrows .next {
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
 }
-.da-next:disabled {
+.date-picker-arrows .next:disabled {
     border-left: none;
 }
-.da-next.focus {
+.date-picker-arrows .next.focus {
     position: absolute;
     right: 0;
     top: 0;
 }
-.da-direction {
+.date-picker-arrows .direction {
     background-color: transparent;
     color: #fff;
     align-self: center;

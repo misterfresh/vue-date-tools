@@ -1,4 +1,4 @@
-.date-picker-container {
+.date-range-picker-suggestions {
     position: relative;
     display: block;
     height: 4rem;
@@ -6,11 +6,11 @@
     margin: 0;
     padding: 0;
 }
-.including-label {
+.date-range-picker-suggestions.including-label {
     height: 6rem;
 }
 
-.input-container {
+.date-range-picker-suggestions .input-container {
     position: relative;
     height: 4rem;
     width: 28rem;
@@ -19,7 +19,7 @@
     display: block;
 }
 
-.date-picker-input {
+.date-range-picker-suggestions .date-picker-input {
 
     padding-top: 0rem;
     background-color: #fff;
@@ -40,11 +40,11 @@
 
 }
 
-.date-picker-input.icon {
+.date-range-picker-suggestions .date-picker-input.icon {
     padding-left: 4rem;
 }
 
-.date-picker-input:focus {
+.date-range-picker-suggestions .date-picker-input:focus {
     border-color: #7B4199;
     background-color: #7B4199;
     color: #fff;
@@ -69,7 +69,7 @@
     opacity: 0.2;
 }
 
-.date-picker {
+.date-range-picker-suggestions-overlay  {
     position: absolute;
     z-index: 12400;
     display: flex;
@@ -80,12 +80,12 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.date-picker-inner {
+.date-range-picker-suggestions-overlay  .date-picker-inner {
     display: flex;
     flex-direction: column;
 }
 
-.input-icon-container{
+.date-range-picker-suggestions .input-icon-container{
     position: absolute;
     left: 0.4rem;
     padding: 0;
@@ -98,68 +98,68 @@
     pointer-events: none;
 
 }
-.input-icon-container.focus {
+.date-range-picker-suggestions .input-icon-container.focus {
     z-index: 12352;
 }
-.input-icon-container.action{
+.date-range-picker-suggestions .input-icon-container.action{
     left: unset;
     right: 0.4rem;
 }
-.input-icon {
+.date-range-picker-suggestions .input-icon {
     align-self: center;
     padding: 0;
     margin: 0;
     color: #7B4199;
 }
-.input-container:hover .date-picker-input, .input-container:hover .input-icon, .input-icon.focus, .date-picker-input.focus{
+.date-range-picker-suggestions .input-container:hover .date-picker-input,.date-range-picker-suggestions .input-container:hover .input-icon,.date-range-picker-suggestions .input-icon.focus,.date-range-picker-suggestions .date-picker-input.focus{
     color: #fff;
     background-color: #7B4199;
 }
-.top {
+.date-range-picker-suggestions-overlay .top {
 
 }
 
-.bottom {
+.date-range-picker-suggestions-overlay .bottom {
     width: 76rem;
     height: 24rem;
 }
 
-.bottom-left {
+.date-range-picker-suggestions-overlay .bottom-left {
     width: 76rem;
     height: 24rem;
     top: 4rem;
     right: 0;
 }
 
-.center {
+.date-range-picker-suggestions-overlay .center {
     width: 76rem;
     height: 24rem;
     left: -24rem;
 }
 
-.left {
+.date-range-picker-suggestions-overlay .left {
     width: 60rem;
     height: 24rem;
     right: 0;
 }
 
-.right {
+.date-range-picker-suggestions-overlay .right {
 
 }
 
-.label {
+.date-range-picker-suggestions .label {
     color: #999;
     font-size: 1.4rem;
     padding-left: 15px;
     height: 20px;
 }
 
-.required {
+.date-range-picker-suggestions .required {
     color: #d9534f;
     margin-left: 4px;
 }
 
-.as-input .date-picker-input{
+.date-range-picker-suggestions.as-input .date-picker-input{
     font-size: 1.6rem;
     border-radius: 0.8rem;
     padding-top: 0.8rem;
@@ -171,17 +171,17 @@
     background-color: #fff;
 }
 
-.as-input .date-picker-container, .as-input .input-container, .as-input .date-picker-input {
+.date-range-picker-suggestions.as-input, .date-range-picker-suggestions.as-input .input-container, .date-range-picker-suggestions.as-input .date-picker-input {
     width: 21rem;
 }
 
-.as-input .input-container:hover .date-picker-input, .as-input .input-container:hover .input-icon, .as-input .input-icon.focus, .as-input .date-picker-input.focus{
+.date-range-picker-suggestions.as-input .input-container:hover .date-picker-input, .date-range-picker-suggestions.as-input .input-container:hover .input-icon, .date-range-picker-suggestions.as-input .input-icon.focus, .date-range-picker-suggestions.as-input .date-picker-input.focus{
     color: #303038;
     background-color: #fff;
     border: 1px solid #51bdba;
 }
 
-.date-picker-suggestions {
+.date-range-picker-suggestions-overlay .date-picker-suggestions {
     width: 16rem;
     list-style: none;
     margin: 0;
@@ -190,7 +190,7 @@
     flex-direction: column;
     justify-content: center;
 }
-.date-picker-suggestion {
+.date-range-picker-suggestions-overlay .date-picker-suggestion {
     font-size: 1.3rem;
     background-color: #f5f5f5;
     border: 1px solid #f5f5f5;
@@ -201,7 +201,7 @@
     cursor: pointer;
 
 }
-.date-picker-suggestion.active {
+.date-range-picker-suggestions-overlay .date-picker-suggestion.active {
     background-color: #08c;
     border: 1px solid #08c;
     color: #fff;

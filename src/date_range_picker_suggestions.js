@@ -174,7 +174,7 @@ export default {
         'DDMMYYYYDDMMYYYY': formatDDMMYYYYDDMMYYYY
     },
 
-    template: `<div class="date-picker-container" :class="{'including-label': !!label, 'as-input': !!isInput}" :id="'date-picker-container-' + id">
+    template: `<div class="date-range-picker-suggestions" :class="{'including-label': !!label, 'as-input': !!isInput}" :id="'date-picker-container-' + id">
     <div v-if="!!label" class="label">{{label}}<span v-if="!!required" class="required">*</span></div>
     <div class="input-container" :id="'input-container-' + id">
         <input
@@ -196,7 +196,7 @@ export default {
     </div>
     <div v-if="hasFocus" class="date-picker-underlay" @click="hasFocus=false"></div>
     <div
-            class="date-picker"
+            class="date-range-picker-suggestions-overlay"
             v-if="hasFocus"
             :class="{
                 [position]: true

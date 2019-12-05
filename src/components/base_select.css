@@ -1,4 +1,4 @@
-.bs-select {
+.base-select {
     width: 5rem;
     height: 2.2rem;
     position: relative;
@@ -9,7 +9,7 @@
     border: 1px solid #ccc;
 }
 
-.bs-select:after {
+.base-select:after {
     content: "▼";
     color: #000;
     position: absolute;
@@ -24,11 +24,11 @@
     pointer-events: none;
 }
 
-.bs-value {
+.base-select .value {
     width: 100%;
 }
 
-.bs-options {
+.base-select .options {
     position: absolute;
     top: 2rem;
     z-index: 12500;
@@ -40,12 +40,12 @@
     pointer-events: none;
 }
 
-.bs-visible {
+.base-select .visible {
     opacity: 1;
     pointer-events: auto;
 }
 
-.bs-option {
+.base-select .option {
     background-color: #fff;
     color: #000;
     width: 5rem;
@@ -53,18 +53,17 @@
     padding-left: 0.5rem;
     padding-top: 0.2rem;
 }
-.bs-option:hover {
+
+.base-select .option:hover {
     background-color: #357ebd;
     color: #fff;
 }
-.bs-option.disabled, .option.disabled:hover {
+.base-select .option.disabled, .base-select .option.disabled:hover {
     color: #fff;
     background-color: #ccc;
 }
 
-
-
-.bs-underlay {
+.base-select .underlay {
     z-index: 12450;
     position: fixed;
     top: 0;

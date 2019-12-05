@@ -167,12 +167,12 @@ export default {
         'DDMMYYYYDDMMYYYY': formatDDMMYYYYDDMMYYYY
     },
 
-    template: `<div class="dr-date-picker-container" :class="{'dr-including-label': !!label, 'as-input': !!isInput, 'icon': !!icon}" :id="'date-picker-container-' + id">
-    <div v-if="!!label" class="dr-label">{{label}}<span v-if="!!required" class="dr-required">*</span></div>
-    <div class="dr-input-container" :id="'input-container-' + id">
+    template: `<div class="date-range-picker" :class="{'including-label': !!label, 'as-input': !!isInput, 'icon': !!icon}" :id="'date-picker-container-' + id">
+    <div v-if="!!label" class="label">{{label}}<span v-if="!!required" class="required">*</span></div>
+    <div class="input-container" :id="'input-container-' + id">
         <input
-                class="dr-date-picker-input"
-                :class="{'dr-focus': hasFocus, 'dr-icon': !!icon}"
+                class="date-picker-input"
+                :class="{'focus': hasFocus, 'icon': !!icon}"
                 @focus="(hasFocus = true) && scrollToDatePicker()"
                 :value="dateRange | DDMMYYYYDDMMYYYY"
                 :placeholder="!!placeholder ? placeholder : ''"
@@ -180,28 +180,28 @@ export default {
                 :id="'date-picker-input-' + id"
                 @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
         />
-        <div v-if="!!icon" class="dr-input-icon-container" :class="{'dr-focus': hasFocus}">
-            <i :class="'dr-input-icon icon-' + icon + (!!hasFocus ? ' dr-focus' : '')" />
+        <div v-if="!!icon" class="input-icon-container" :class="{'focus': hasFocus}">
+            <i :class="'input-icon icon-' + icon + (!!hasFocus ? ' focus' : '')" />
         </div>
-        <div v-if="!isInput" class="dr-input-icon-container dr-action" :class="{'dr-focus': hasFocus}">
-            <i :class="'dr-input-icon icon-chevron-' + (hasFocus ? 'dr-up' : 'dr-down') + (hasFocus ? ' dr-focus' : '')"/>
+        <div v-if="!isInput" class="input-icon-container action" :class="{'focus': hasFocus}">
+            <i :class="'input-icon icon-chevron-' + (hasFocus ? 'up' : 'down') + (hasFocus ? ' focus' : '')"/>
         </div>
     </div>
-    <div v-if="hasFocus" class="dr-date-picker-underlay" @click="hasFocus=false"></div>
+    <div v-if="hasFocus" class="date-picker-underlay" @click="hasFocus=false"></div>
     <div
-            class="date-picker"
+            class="date-range-picker-overlay"
             v-if="hasFocus"
             :class="{
-                'dr-top': position === 'top',
-                'dr-bottom': position === 'bottom',
-                'dr-left': position === 'left',
-                'dr-right': position === 'right',
-                'dr-bottom-left': position === 'bottom-left'
+                'top': position === 'top',
+                'bottom': position === 'bottom',
+                'left': position === 'left',
+                'right': position === 'right',
+                'bottom-left': position === 'bottom-left'
             }"
             :id="'date-picker-' + id"
 
     >
-        <div class="dr-date-picker-inner">
+        <div class="date-picker-inner">
             <date-input
                     :date="dateRange[0]"
                     :style="{marginTop: '1rem', marginLeft: '1rem'}"
@@ -231,7 +231,7 @@ export default {
                     :hovered-date="hoveredDate"
             />
         </div>
-        <div class="dr-date-picker-inner">
+        <div class="date-picker-inner">
 
             <date-input
                     :date="dateRange[1]"

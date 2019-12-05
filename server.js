@@ -35,9 +35,9 @@ http.createServer(function (req, res) {
     const map = {
         '.ico': 'image/x-icon',
         '.html': 'text/html',
-        '.js': 'text/javascript',
-        '.json': 'application/json',
-        '.css': 'text/css',
+        '.js': 'text/javascript; charset=utf-8',
+        '.json': 'application/json; charset=utf-8',
+        '.css': 'text/css; charset=utf-8',
         '.png': 'image/png',
         '.jpg': 'image/jpeg',
         '.wav': 'audio/wav',

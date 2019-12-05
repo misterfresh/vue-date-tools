@@ -1,4 +1,4 @@
-.ms-month-selector {
+.month-selector {
     display: flex;
     margin-left: 3.5rem;
     width: 22rem;
@@ -7,11 +7,11 @@
     align-items: center;
 }
 
-.ms-month-select {
+.month-selector .month-select {
     width: 8rem;
 }
 
-.ms-navigation-button {
+.month-selector .navigation-button {
     background: transparent;
 
     outline: none;
@@ -28,22 +28,22 @@
     justify-content: center;
 }
 
-.ms-nav-icon {
+.month-selector .nav-icon {
     align-self: center;
 }
 
-.ms-navigation-button:hover {
+.month-selector .navigation-button:hover {
     background-color: #eee;
 }
 
-.ms-navigation-button:disabled {
+.month-selector .navigation-button:disabled {
     background-color: #ddd;
     color: #eee
 }
-button:disabled {
+.month-selector button:disabled {
     cursor: default;
 }
-select {
+.month-selector select {
     height: 2rem;
     width: 8rem;
 }

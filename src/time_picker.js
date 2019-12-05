@@ -3,6 +3,8 @@ import uuid from '/deps/uuid'
 import getTimeFromHHmm from './parse/getTimeFromHHmm'
 import debounce from '/deps/lodash.debounce.js'
 import formatHHmm from './format/formatHHmm'
+import setHours from '/deps/date-fns/setHours'
+import setMinutes from '/deps/date-fns/setMinutes'
 
 export default {
     name: 'time-picker',
@@ -69,7 +71,8 @@ export default {
                     }
                 })
             }
-        }
+        },
+        setHours,setMinutes,
     },
 
     mounted: function(){
@@ -80,7 +83,7 @@ export default {
         'HHmm': formatHHmm
     },
 
-    template: `<div class="date-picker-container" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
+    template: `<div class="time-picker" :class="{'including-label': !!label}" :id="'date-picker-container-' + id">
     <div v-if="!!label" class="label">{{label}}</div>
     <div class="input-container" :id="'input-container-' + id">
         <input

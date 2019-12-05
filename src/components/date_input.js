@@ -58,18 +58,18 @@ export default {
     filters: {
         'DDMMYYYY': formatDDMMYYYY
     },
-    template: `<div class="di-input-container">
+    template: `<div class="date-input-container">
     <input
             @focus="(hasFocus = true)"
             @blur="(hasFocus = false)"
             :value="date | DDMMYYYY"
-            class="di-date-input"
+            class="date-input"
             :class="{focused: hasFocus}"
             :style="inputStyle"
             @input="event => { event.preventDefault(); event.stopPropagation(); update(event.target.value)}"
     >
-    <div class="di-input-icon-container" :class="{focused: hasFocus}">
-        <i :class="'di-input-icon icon-calendar'"/>
+    <div class="input-icon-container" :class="{focused: hasFocus}">
+        <i :class="'input-icon icon-calendar'"/>
     </div>
 </div>`
 }

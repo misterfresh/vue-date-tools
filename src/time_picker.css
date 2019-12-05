@@ -1,19 +1,19 @@
-.date-picker-container {
+.time-picker {
     position: relative;
     display: block;
     height: 3.8rem;
     width: 26rem;
 }
-.date-picker-container.including-label {
+.time-picker.including-label {
     height: 5.8rem;
 }
 
-.input-container {
+.time-picker .input-container {
     position: relative;
     height: 4rem;
 }
 
-.date-picker-input {
+.time-picker .date-picker-input {
     font-size: 1.6rem;
     padding-top: 0rem;
     background-color: #fff;
@@ -28,7 +28,7 @@
     width: 26rem;
 }
 
-.date-picker-input:focus {
+.time-picker .date-picker-input:focus {
     border-color: #51bdba;
     outline: none;
     box-shadow: none;
@@ -38,7 +38,7 @@
     left: 0;
 }
 
-.date-picker-underlay {
+.time-picker .date-picker-underlay {
     position: fixed;
     z-index: 12350;
     top: 0;
@@ -51,7 +51,7 @@
     opacity: 0.2;
 }
 
-.date-picker {
+.time-picker .date-picker {
     position: absolute;
     z-index: 12400;
     display: flex;
@@ -61,12 +61,12 @@
     flex-direction: row;
 }
 
-.date-picker-inner {
+.time-picker .date-picker-inner {
     display: flex;
     flex-direction: column;
 }
 
-.input-icon-container{
+.time-picker .input-icon-container{
     position: absolute;
     left: 0;
     padding: 0;
@@ -77,58 +77,58 @@
     display: flex;
     justify-content: center;
 }
-.input-icon-container.focus {
+.time-picker .input-icon-container.focus {
     z-index: 12352;
 }
-.input-icon {
+.time-picker .input-icon {
     align-self: center;
     padding: 0;
     margin: 0;
 }
 
-.top {
+.time-picker .top {
 
 }
 
-.bottom {
+.time-picker .bottom {
     width: 26rem;
     height: 17rem;
-    top: 3.8rem;
+    top: 6rem;
     left: 0;
 }
 
-.including-label .bottom {
+.time-picker .including-label .bottom {
     top: 5.8rem;
 }
 
-.bottom-left {
+.time-picker .bottom-left {
     width: 28rem;
     height: 17rem;
     top: 4rem;
     right: 0;
 }
 
-.left {
+.time-picker .left {
 
 }
 
-.right {
+.time-picker .right {
 
 }
 
-.label {
+.time-picker .label {
     color: #999;
     font-size: 1.4rem;
     padding-left: 15px;
     height: 20px;
 }
 
-.time-increments {
+.time-picker .time-increments {
     display: flex;
     flex-direction: row;
 }
 
-.time-separator {
+.time-picker .time-separator {
     font-size: 1.6rem;
     color: #212529;
     text-align: center;
@@ -137,13 +137,13 @@
     align-items: center;
 }
 
-.erase-time {
+.time-picker .erase-time {
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
 
-.erase-icon {
+.time-picker .erase-icon {
     color:#6e2c87;
     align-self: center;
     font-size: 1.6rem;

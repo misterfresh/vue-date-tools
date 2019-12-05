@@ -1,4 +1,4 @@
-.dr-date-picker-container {
+.date-range-picker {
     position: relative;
     display: block;
     height: 4rem;
@@ -6,11 +6,11 @@
     margin: 0;
     padding: 0;
 }
-.dr-including-label {
+.date-range-picker.including-label {
     height: 6rem;
 }
 
-.dr-input-container {
+.date-range-picker .input-container {
     position: relative;
     height: 4rem;
     width: 28rem;
@@ -19,7 +19,7 @@
     display: block;
 }
 
-.dr-date-picker-input {
+.date-range-picker .date-picker-input {
 
     padding-top: 0rem;
     background-color: #fff;
@@ -40,11 +40,11 @@
 
 }
 
-.dr-date-picker-input.dr-icon {
+.date-range-picker .date-picker-input.icon {
     padding-left: 4rem;
 }
 
-.dr-date-picker-input:focus {
+.date-range-picker .date-picker-input:focus {
     border-color: #7B4199;
     background-color: #7B4199;
     color: #fff;
@@ -56,7 +56,7 @@
     left: 0;
 }
 
-.dr-date-picker-underlay {
+.date-picker-underlay {
     position: fixed;
     z-index: 12350;
     top: 0;
@@ -69,7 +69,7 @@
     opacity: 0.2;
 }
 
-.dr-date-picker {
+.date-range-picker-overlay {
     position: absolute;
     z-index: 12400;
     display: flex;
@@ -80,12 +80,12 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.dr-date-picker-inner {
+.date-range-picker-overlay .date-picker-inner {
     display: flex;
     flex-direction: column;
 }
 
-.dr-input-icon-container{
+.date-range-picker .input-icon-container{
     position: absolute;
     left: 0.4rem;
     padding: 0;
@@ -98,68 +98,68 @@
     pointer-events: none;
 
 }
-.dr-input-icon-container.dr-focus {
+.date-range-picker .input-icon-container.focus {
     z-index: 12352;
 }
-.dr-input-icon-container.dr-action{
+.date-range-picker .input-icon-container.action{
     left: unset;
     right: 0.4rem;
 }
-.dr-input-icon {
+.date-range-picker .input-icon {
     align-self: center;
     padding: 0;
     margin: 0;
     color: #7B4199;
 }
-.dr-input-container:hover .dr-date-picker-input, .dr-input-container:hover .dr-input-icon, .dr-input-icon.dr-focus, .dr-date-picker-input.dr-focus{
+.date-range-picker .input-container:hover .date-picker-input, .date-range-picker .input-container:hover .input-icon, .date-range-picker .input-icon.focus, .date-range-picker .date-picker-input.focus{
     color: #fff;
     background-color: #7B4199;
 }
-.dr-top {
+.date-range-picker-overlay .top {
 
 }
 
-.dr-bottom {
+.date-range-picker-overlay .bottom {
     width: 60rem;
     height: 24rem;
 }
 
-.dr-bottom-left {
+.date-range-picker-overlay .bottom-left {
     width: 60rem;
     height: 24rem;
     top: 4rem;
     right: 0;
 }
 
-.dr-center {
+.date-range-picker-overlay .center {
     width: 60rem;
     height: 24rem;
     left: -15rem;
 }
 
-.dr-left {
+.date-range-picker-overlay .left {
     width: 60rem;
     height: 24rem;
     right: 0;
 }
 
-.dr-right {
+.date-range-picker-overlay .right {
 
 }
 
-.dr-label {
+.date-range-picker .label {
     color: #999;
     font-size: 1.4rem;
     padding-left: 15px;
     height: 20px;
 }
 
-.dr-required {
+.date-range-picker .required {
     color: #d9534f;
     margin-left: 4px;
 }
 
-.dr-as-input .dr-date-picker-input{
+.date-range-picker .as-input .date-picker-input{
     font-size: 1.6rem;
     border-radius: 0.8rem;
     padding-top: 0.8rem;
@@ -171,21 +171,21 @@
     background-color: #fff;
 }
 
-.dr-as-input .dr-date-picker-container, .dr-as-input .dr-input-container, .dr-as-input .dr-date-picker-input {
+.date-range-picker .as-input .date-picker-container, .date-range-picker .as-input .input-container, .date-range-picker .as-input .date-picker-input {
     width: 21rem;
 }
 
-.dr-as-input .dr-input-container:hover .dr-date-picker-input, .dr-as-input .dr-input-container:hover .dr-input-icon, .dr-as-input .dr-input-icon.dr-focus, .dr-as-input .dr-date-picker-input.dr-focus{
+.date-range-picker .as-input .input-container:hover .date-picker-input, .date-range-picker .as-input .input-container:hover .input-icon, .date-range-picker .as-input .input-icon.focus, .date-range-picker .as-input .date-picker-input.focus{
     color: #303038;
     background-color: #fff;
     border: 1px solid #51bdba;
 }
-.dr-as-input .dr-date-picker-input.dr-icon {
+.date-range-picker .as-input .date-picker-input.icon {
     padding-left: 4rem;
 }
-.dr-as-input i {
+.date-range-picker .as-input i {
     color: #303038;
 }
-.dr-as-input .dr-date-picker-container.dr-icon, .dr-as-input .dr-date-picker-container.dr-icon .dr-input-container, .dr-as-input .dr-date-picker-input.dr-icon {
+.date-range-picker .as-input .date-picker-container.icon, .date-range-picker .as-input .date-picker-container.icon .input-container, .date-range-picker .as-input .date-picker-input.icon {
     width: 23rem;
 }

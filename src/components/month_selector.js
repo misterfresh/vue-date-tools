@@ -22,11 +22,11 @@ export default {
         },
         previousMonthIconClass: {
             type: String,
-            default: 'icon-chevron-left'
+            default: ''
         },
         nextMonthIconClass: {
             type: String,
-            default: 'icon-chevron-right'
+            default: ''
         },
         lastYear: {
             type: Number,
@@ -51,10 +51,10 @@ export default {
         setMonth,
         setYear
     },
-    template: `<div class="ms-month-selector">
+    template: `<div class="month-selector">
     <button @click="$emit('changeView', addMonths(viewDate, -1))"
-            class="ms-navigation-button" :disabled="activeYear === (firstYear || (lastYear-10)) && activeMonth === 0">
-        <i v-if="previousMonthIconClass" class="ms-nav-icon" :class="previousMonthIconClass"/>
+            class="navigation-button" :disabled="activeYear === (firstYear || (lastYear-10)) && activeMonth === 0">
+        <i v-if="previousMonthIconClass" class="nav-icon" :class="previousMonthIconClass"/>
         <span v-else><</span>
     </button>
     <base-select
@@ -62,7 +62,7 @@ export default {
             :value="('jan._feb._mar._apr._may_june_july_aug._sept._oct._nov._dec.').split('_')[activeMonth]"
             :optionDisabled="option=> (setMonth(viewDate, option) > maxDate)"
             @change="$emit('changeView', setMonth(viewDate,$event))"
-            class="ms-month-select"
+            class="month-select"
     />
     <base-select
             :options="Array(lastYear - (firstYear || (lastYear-10)) + 1).fill().map(
@@ -72,11 +72,11 @@ export default {
             )"
             :value="activeYear"
             @change="$emit('changeView', setYear(viewDate, $event))"
-            class="ms-month-select"
+            class="month-select"
     />
     <button @click="$emit('changeView', addMonths(viewDate, 1))"
-            class="ms-navigation-button" :disabled="addMonths(viewDate, 1) > maxDate">
-        <i v-if="nextMonthIconClass" class="ms-nav-icon" :class="nextMonthIconClass"/>
+            class="navigation-button" :disabled="addMonths(viewDate, 1) > maxDate">
+        <i v-if="nextMonthIconClass" class="nav-icon" :class="nextMonthIconClass"/>
         <span v-else>></span>
     </button>
 </div>`

@@ -88,23 +88,23 @@ export default {
              }
         }
     },
-    template: `<div class="rs-range-selector">
-    <div class="rs-iso-weeks">
-        <div class="rs-day week-abbr">W</div>
-        <div class="rs-day" v-for="isoWeek in isoWeeks">{{isoWeek.index}}</div>
+    template: `<div class="range-selectable">
+    <div class="iso-weeks">
+        <div class="day week-abbr">W</div>
+        <div class="day" v-for="isoWeek in isoWeeks">{{isoWeek.index}}</div>
     </div>
-    <div class="rs-days-grid">
-        <div class="week weekDays"><div class="rs-day" v-for="day in ('mo_tu_we_th_fr_sa_su').split('_')">{{day}}</div></div>
-        <div v-for="isoWeek in isoWeeks" class="rs-week">
+    <div class="days-grid">
+        <div class="week weekDays"><div class="day" v-for="day in ('mo_tu_we_th_fr_sa_su').split('_')">{{day}}</div></div>
+        <div v-for="isoWeek in isoWeeks" class="week">
             <div
                     v-for="day in isoWeek.days"
                     @click="handleClick(day)"
                     @mouseover="$emit('hover', day.date)"
-                    class="rs-day"
+                    class="day"
                     :class="{
-                        'rs-other-month': !day.isActiveMonth,
-                        'rs-disabled': (setDate(setMonth(setYear( activeDate, getYear(day.date)), getMonth(day.date)), getDate(day.date)) > maxDate),
-                        'rs-range': !!activeRange && !!activeRange[0] && activeRange[0] instanceof Date && (
+                        'other-month': !day.isActiveMonth,
+                        'disabled': (setDate(setMonth(setYear( activeDate, getYear(day.date)), getMonth(day.date)), getDate(day.date)) > maxDate),
+                        'range': !!activeRange && !!activeRange[0] && activeRange[0] instanceof Date && (
                             ( !!activeRange[1] && activeRange[1] instanceof Date && (
                                 (activeRange[0] <= day.date && day.date <= activeRange[1])
                                 || (activeRange[0] >= day.date && day.date >= activeRange[1])
@@ -112,7 +112,7 @@ export default {
                                 (activeRange[0] <= day.date && day.date <= hoveredDate)
                                 || (activeRange[0] >= day.date && day.date >= hoveredDate)
                             )) ),
-                         'rs-active': (!!activeRange && !!activeRange[0] && activeRange[0] instanceof Date && (getDate(day.date) === getDate(activeRange[0])) && (getMonth(day.date) === getMonth(activeRange[0])) && (getYear(day.date) === getYear(activeRange[0]))) || (!!activeRange && !!activeRange[1] && activeRange[1] instanceof Date && (getDate(day.date) === getDate(activeRange[1])) && (getMonth(day.date) === getMonth(activeRange[1])) && (getYear(day.date) === getYear(activeRange[1]))),
+                         'active': (!!activeRange && !!activeRange[0] && activeRange[0] instanceof Date && (getDate(day.date) === getDate(activeRange[0])) && (getMonth(day.date) === getMonth(activeRange[0])) && (getYear(day.date) === getYear(activeRange[0]))) || (!!activeRange && !!activeRange[1] && activeRange[1] instanceof Date && (getDate(day.date) === getDate(activeRange[1])) && (getMonth(day.date) === getMonth(activeRange[1])) && (getYear(day.date) === getYear(activeRange[1]))),
                     }">
                 {{day.day}}
             </div>
