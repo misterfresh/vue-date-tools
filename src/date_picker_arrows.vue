@@ -29,12 +29,9 @@
                 class="date-picker-arrows-overlay"
                 v-if="hasFocus"
                 :class="{
-                'top': position === 'top',
-                'bottom': position === 'bottom',
-                'left': position === 'left',
-                'right': position === 'right',
-                'bottom-left': position === 'bottom-left'
-            }"
+                    [position]: true,
+                    'including-label': !!label
+                }"
                 :id="'date-picker-' + id"
 
         >
@@ -246,6 +243,8 @@
         border-radius: 0.4rem;
         padding: 0.4rem;
         flex-direction: row;
+        border: 1px solid #eee;
+        justify-content: center;
     }
 
     .date-picker-inner {

@@ -24,8 +24,9 @@
                 class="date-range-picker-suggestions-overlay"
                 v-if="hasFocus"
                 :class="{
-                [position]: true
-            }"
+                    [position]: true,
+                    'including-label': !!label
+                }"
                 :id="'date-picker-' + id"
 
         >
@@ -33,7 +34,7 @@
                 <date-input
                         :date="activeRange[0]"
                         :style="{marginTop: '1rem', marginLeft: '0.5rem'}"
-                        :input-style="{width: '25rem'}"
+                        :input-style="{width: '22rem'}"
                         :max-date="maxDate"
                         @change="date => {
                         viewRange = [date, viewRange[1] > date ? viewRange[1] : (startOfMonth(addMonths(date, 1)) < maxDate ? startOfMonth(addMonths(date, 1)) : startOfMonth(maxDate))];
@@ -62,7 +63,7 @@
                 <date-input
                         :date="activeRange[1]"
                         :style="{marginTop: '1rem', marginLeft: '0.5rem'}"
-                        :input-style="{width: '25rem'}"
+                        :input-style="{width: '22rem'}"
                         @change="date => {
                         viewRange = [viewRange[0] <= date ? viewRange[0] : startOfMonth(addMonths(date, -1)), date];
                         activeRange = [dateRange[0] <= date ? dateRange[0] : addMonths(date, -1), date]
@@ -364,6 +365,7 @@ export default {
         padding: 0.4rem;
         flex-direction: row;
         border: 1px solid rgba(0, 0, 0, 0.15);
+        justify-content: space-around;
     }
 
     .date-picker-inner {
@@ -463,7 +465,7 @@ export default {
         border: 1px solid #51bdba;
     }
 
-    .date-range-picker-suggestions-overlay .date-picker-suggestions {
+    .date-picker-suggestions {
         width: 16rem;
         list-style: none;
         margin: 0;
@@ -472,7 +474,7 @@ export default {
         flex-direction: column;
         justify-content: center;
     }
-    .date-range-picker-suggestions-overlay .date-picker-suggestion {
+    .date-picker-suggestion {
         font-size: 1.3rem;
         background-color: #f5f5f5;
         border: 1px solid #f5f5f5;
@@ -483,7 +485,7 @@ export default {
         cursor: pointer;
 
     }
-    .date-range-picker-suggestions-overlay .date-picker-suggestion.active {
+    .date-picker-suggestion.active {
         background-color: #40b883;
         border: 1px solid #40b883;
         color: #fff;

@@ -17,11 +17,12 @@
         </div>
         <div v-if="hasFocus" class="date-picker-underlay" @click="hasFocus=false"></div>
         <div
-                class="date-picker"
+                class="time-picker-overlay"
                 v-if="hasFocus"
                 :class="{
-                [position]: true
-            }"
+                    [position]: true,
+                    'including-label': !!label
+                }"
                 :id="'date-picker-' + id"
 
         >
@@ -190,7 +191,7 @@ export default {
         opacity: 0.2;
     }
 
-    .date-picker {
+    .time-picker-overlay {
         position: absolute;
         z-index: 12400;
         display: flex;
@@ -198,6 +199,7 @@ export default {
         border-radius: 0.4rem;
         padding: 0.4rem;
         flex-direction: row;
+        border: 1px solid #eee;
     }
 
     .date-picker-inner {

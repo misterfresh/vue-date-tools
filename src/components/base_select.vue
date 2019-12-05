@@ -108,7 +108,7 @@
         pointer-events: none;
     }
 
-    .base-select .value {
+    .value {
         width: 100%;
     }
 

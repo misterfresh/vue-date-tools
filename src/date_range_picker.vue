@@ -24,12 +24,9 @@
                 class="date-range-picker-overlay"
                 v-if="hasFocus"
                 :class="{
-                'top': position === 'top',
-                'bottom': position === 'bottom',
-                'left': position === 'left',
-                'right': position === 'right',
-                'bottom-left': position === 'bottom-left'
-            }"
+                    [position]: true,
+                    'including-label': !!label
+                }"
                 :id="'date-picker-' + id"
 
         >
@@ -37,7 +34,7 @@
                 <date-input
                         :date="dateRange[0]"
                         :style="{marginTop: '1rem', marginLeft: '1rem'}"
-                        :input-style="{width: '25rem'}"
+                        :input-style="{width: '22rem'}"
                         :max-date="maxDate"
                         @change="date => {
                         viewRange = [date, viewRange[1] > date ? viewRange[1] : (startOfMonth(addMonths(date, 1)) < maxDate ? startOfMonth(addMonths(date, 1)) : startOfMonth(maxDate))];
@@ -68,7 +65,7 @@
                 <date-input
                         :date="dateRange[1]"
                         :style="{marginTop: '1rem', marginLeft: '1rem'}"
-                        :input-style="{width: '25rem'}"
+                        :input-style="{width: '22rem'}"
                         @change="date => {
                         viewRange = [viewRange[0] < date ? viewRange[0] : startOfMonth(addMonths(date, -1)), date];
                         activeRange = [dateRange[0] < date ? dateRange[0] : addMonths(date, -1), date]
@@ -352,6 +349,7 @@ export default {
         padding: 0.4rem;
         flex-direction: row;
         border: 1px solid rgba(0, 0, 0, 0.15);
+        justify-content: space-around;
     }
 
     .date-picker-inner {

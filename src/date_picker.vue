@@ -20,8 +20,9 @@
                 class="date-picker-overlay"
                 v-if="hasFocus"
                 :class="{
-                [position]: true
-            }"
+                    [position]: true,
+                    'including-label': !!label
+                }"
                 :id="'date-picker-' + id"
 
         >
@@ -165,7 +166,7 @@
         display: block;
         height: 4rem;
     }
-    .including-label {
+    .date-picker.including-label {
         height: 6rem;
     }
 
@@ -207,7 +208,7 @@
         bottom: 0;
         height: 100vh;
         width: 100vw;
-        background-color: #aaa;
+        background-color: transparent;
         opacity: 0.2;
     }
 
@@ -219,6 +220,8 @@
         border-radius: 0.4rem;
         padding: 0.4rem;
         flex-direction: row;
+        border: 1px solid #eee;
+        justify-content: center;
     }
 
     .date-picker-inner {
