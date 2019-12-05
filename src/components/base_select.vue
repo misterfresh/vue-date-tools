@@ -19,6 +19,7 @@
                             @click="(!optionDisabled(option)) && $emit('change', parseInt(option)) && (selected = id + '_' + index) && (hasFocus = false)"
                             class="option"
                             :id="id + '_' + index"
+                            :key="id + '-' + index"
                             :class="{
                             'disabled': optionDisabled(option)
                         }"
@@ -48,7 +49,7 @@
             },
             optionDisabled: {
                 type: Function,
-                default: function(option){
+                default: function(){
                     return false
                 }
             }
