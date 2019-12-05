@@ -1,5 +1,5 @@
 # vue-date-tools
-#VueJS Date Tools based on the date-fns library
+VueJS Date Components based on the date-fns library
 
 [Click Here to Try the Live Demo](https://misterfresh.github.io/vue-date-tools/)
 
