@@ -131,7 +131,7 @@
   .item-container{
     display: flex;
     justify-content: left;
-    align-items: left;
+    align-items: flex-start;
     width: 95%;
     margin-bottom: 1rem;
   }

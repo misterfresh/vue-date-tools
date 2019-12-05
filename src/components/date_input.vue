@@ -103,7 +103,7 @@
         border: 1px solid #ccc;
     }
     input.focused {
-        border: 1px solid #08c;
+        border: 1px solid #40b883;
     }
     i {
         align-self: center;

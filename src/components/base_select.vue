@@ -138,7 +138,7 @@
     }
 
     .option:hover {
-        background-color: #357ebd;
+        background-color: #40b883;
         color: #fff;
     }
     .option.disabled, .option.disabled:hover {

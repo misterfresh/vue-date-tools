@@ -139,7 +139,7 @@
         color: inherit;
     }
     .active:hover{
-        background-color: #357ebd;
+        background-color: #40b883;
         border-color: transparent;
         color: #fff;
     }
@@ -155,7 +155,7 @@
         color: #999;
     }
     .active {
-        background-color: #357ebd;
+        background-color: #40b883;
         border-color: transparent;
         color: #fff;
     }

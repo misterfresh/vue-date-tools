@@ -171,7 +171,7 @@
         color: inherit;
     }
     .active:hover{
-        background-color: #357ebd;
+        background-color: #40b883;
         border-color: transparent;
         color: #fff;
     }
@@ -188,14 +188,14 @@
     }
 
     .range {
-        background-color: #ebf4f8;
+        background-color: #40b88347;
         border-color: transparent;
         color: #000;
         border-radius: 0;
     }
 
     .active, .range.active {
-        background-color: #357ebd;
+        background-color: #40b883;
         border-color: transparent;
         color: #fff;
     }

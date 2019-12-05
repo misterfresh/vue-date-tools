@@ -89,11 +89,10 @@
             </div>
             <div class="date-picker-suggestions">
                 <div class="date-picker-suggestion" :class="{active:(label === activeSuggestion)}" v-for="(suggestion, label) in suggestions" @click="() => {
-                viewRange = suggestion
-                activeRange = suggestion
-                activeSuggestion = label
-
-            }">
+                    viewRange = suggestion
+                    activeRange = suggestion
+                    activeSuggestion = label
+                }" :key="label">
                     {{ ranges[label] }}
                 </div>
                 <validation
@@ -137,7 +136,7 @@ export default {
         },
         position: {
             type: String,
-            default: "center"
+            default: "bottom"
         },
         label: {
             type: String,
@@ -314,12 +313,12 @@ export default {
         text-align: left;
         padding-left: 2rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        color: #7B4199;
+        color: #35495d;
 
         height: 4rem;
         line-height: 1.6rem;
         border-radius: 2rem;
-        border: 2px solid #7B4199;
+        border: 2px solid #35495d;
         font-size: 1.8rem;
         width: 28rem;
         cursor: pointer;
@@ -332,8 +331,8 @@ export default {
     }
 
     .date-picker-input:focus {
-        border-color: #7B4199;
-        background-color: #7B4199;
+        border-color: #35495d;
+        background-color: #35495d;
         color: #fff;
         outline: none;
         box-shadow: none;
@@ -396,11 +395,11 @@ export default {
         align-self: center;
         padding: 0;
         margin: 0;
-        color: #7B4199;
+        color: #35495d;
     }
     .input-container:hover .date-picker-input,.input-container:hover .input-icon,.input-icon.focus,.date-picker-input.focus{
         color: #fff;
-        background-color: #7B4199;
+        background-color: #35495d;
     }
 
     .top {
@@ -478,15 +477,15 @@ export default {
         background-color: #f5f5f5;
         border: 1px solid #f5f5f5;
         border-radius: 0.4rem;
-        color: #08c;
+        color: #40b883;
         padding: 0.3rem 1.2rem;
         margin-bottom: 0.8rem;
         cursor: pointer;
 
     }
     .date-range-picker-suggestions-overlay .date-picker-suggestion.active {
-        background-color: #08c;
-        border: 1px solid #08c;
+        background-color: #40b883;
+        border: 1px solid #40b883;
         color: #fff;
     }
 

@@ -194,14 +194,14 @@
         text-align: left;
         padding-left: 3.8rem;
         fill: transparent;
-        color: #7b4199;
+        color: #35495d;
         background-color: transparent;
         outline: none;
         cursor: pointer;
         width: 14rem;
         line-height: 1.6rem;
         border-radius: 0rem;
-        border: 2px solid #7b4199;
+        border: 2px solid #35495d;
         font-size: 1.8rem;
         font-weight: normal;
         box-sizing: border-box;
@@ -213,8 +213,8 @@
     }
 
     .date-picker-input:focus {
-        border-color: #7b4199;
-        background-color: #7b4199;
+        border-color: #35495d;
+        background-color: #35495d;
         color: #fff;
         outline: none;
         box-shadow: none;
@@ -275,15 +275,15 @@
         align-self: center;
         padding: 0;
         margin: 0;
-        color: #7b4199;
+        color: #35495d;
     }
     .input-icon-focus {
         color: #fff;
     }
     .input-container:hover input{
         color: #fff;
-        border-color: #7b4199;
-        background-color: #7b4199;
+        border-color: #35495d;
+        background-color: #35495d;
     }
     .input-container:hover i{
         color: #fff;
@@ -295,7 +295,7 @@
     .bottom {
         width: 30rem;
         height: 20rem;
-        top: 4rem;
+        top: 5.8rem;
         left: -4rem;
     }
 
@@ -322,8 +322,8 @@
     }
 
    .navigation{
-        background-color: #7b4199;
-        border: 2px solid #7b4199;
+        background-color: #35495d;
+        border: 2px solid #35495d;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -337,8 +337,8 @@
         outline: 0;
     }
     .navigation:hover{
-        background-color: #9a50bf;
-        border: 2px solid #9a50bf;
+        background-color: #637f9a;
+        border: 2px solid #637f9a;
         border-left: none;
         border-right: none;
     }
@@ -346,9 +346,9 @@
         color: #fff;
     }
    .navigation:disabled {
-        border: 2px solid rgba(123, 65, 153, 0.5);
-        fill: rgba(123, 65, 153, 0.5);
-        background-color: rgba(123, 65, 153, 0.5);
+        border: 2px solid rgba(53, 73, 93, 0.5);
+        fill: rgba(53, 73, 93, 0.5);
+        background-color: rgba(53, 73, 93, 0.5);
         cursor: not-allowed;
     }
     .previous {

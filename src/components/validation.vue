@@ -43,8 +43,8 @@
     }
     .apply {
         color: #fff;
-        background-color: #32d13d;
-        border-color: #32d13d;
+        background-color: #40b883;
+        border-color: #40b883;
         box-shadow: none !important;
     }
 

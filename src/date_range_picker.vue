@@ -301,12 +301,12 @@ export default {
         text-align: left;
         padding-left: 2rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        color: #7B4199;
+        color: #35495d;
 
         height: 4rem;
         line-height: 1.6rem;
         border-radius: 2rem;
-        border: 2px solid #7B4199;
+        border: 2px solid #35495d;
         font-size: 1.8rem;
         width: 28rem;
         cursor: pointer;
@@ -319,8 +319,8 @@ export default {
     }
 
     .date-picker-input:focus {
-        border-color: #7B4199;
-        background-color: #7B4199;
+        border-color: #35495d;
+        background-color: #35495d;
         color: #fff;
         outline: none;
         box-shadow: none;
@@ -383,11 +383,11 @@ export default {
         align-self: center;
         padding: 0;
         margin: 0;
-        color: #7B4199;
+        color: #35495d;
     }
     .input-container:hover .date-picker-input, .input-container:hover .input-icon, .input-icon.focus, .date-picker-input.focus{
         color: #fff;
-        background-color: #7B4199;
+        background-color: #35495d;
     }
 
     .top {
