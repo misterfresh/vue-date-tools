@@ -1,8 +1,8 @@
 // HHmmss
 
-import setHours from '/deps/date-fns/setHours'
-import setMinutes from '/deps/date-fns/setMinutes'
-import setSeconds from '/deps/date-fns/setSeconds'
+import setHours from 'date-fns/setHours'
+import setMinutes from 'date-fns/setMinutes'
+import setSeconds from 'date-fns/setSeconds'
 
 export default function getTimeFromHHmm(timestamp){
     if(!timestamp){

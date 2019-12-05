@@ -1,9 +1,9 @@
-import getSeconds from "/deps/date-fns/getSeconds";
-import getMonth from "/deps/date-fns/getMonth";
-import getMinutes from "/deps/date-fns/getMinutes";
-import getDate from "/deps/date-fns/getDate";
-import getYear from "/deps/date-fns/getYear";
-import getHours from "/deps/date-fns/getHours";
+import getSeconds from "date-fns/getSeconds";
+import getMonth from "date-fns/getMonth";
+import getMinutes from "date-fns/getMinutes";
+import getDate from "date-fns/getDate";
+import getYear from "date-fns/getYear";
+import getHours from "date-fns/getHours";
 
 export default function extractYMDhms(date){
     if(!date || !(date instanceof Date)){

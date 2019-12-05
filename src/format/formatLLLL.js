@@ -1,13 +1,13 @@
 // DD MMMM YYYY - HH:mm:ss
 
-import getYear from '/deps/date-fns/getYear'
-import getMonth from '/deps/date-fns/getMonth'
-import getDate from '/deps/date-fns/getDate'
-import getHours from '/deps/date-fns/getHours'
-import getMinutes from '/deps/date-fns/getMinutes'
+import getYear from 'date-fns/getYear'
+import getMonth from 'date-fns/getMonth'
+import getDate from 'date-fns/getDate'
+import getHours from 'date-fns/getHours'
+import getMinutes from 'date-fns/getMinutes'
 
-import capitalize from '/deps/capitalize'
-import getDay from "/deps/date-fns/getDay"
+import capitalize from './../utils/capitalize'
+import getDay from "date-fns/getDay"
 
 export default function formatLLLL(date){
 
