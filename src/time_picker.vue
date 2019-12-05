@@ -186,7 +186,7 @@ export default {
         bottom: 0;
         height: 100vh;
         width: 100vw;
-        background-color: #aaa;
+        background-color: transparent;
         opacity: 0.2;
     }
 

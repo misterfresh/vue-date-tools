@@ -5,7 +5,7 @@ VueJS Date Tools
 
 ## Best features:
 ### Lightweight and almost no dependencies
-No dependencies other than the lightweight date-fns library! All VueJS compatible datepickers I could find until now used JQuery, Bootstrap, and Moment JS. Vue Date Tools is the best starting point for performance in Date components.
+No dependencies other than the lightweight date-fns library! All other VueJS compatible datepickers I could find until now used JQuery, Bootstrap, and Moment JS. Vue Date Tools is the best starting point for performance in Date components.
 
 ### Subcomponents are exposed for maximum flexibility
 Mix and match sub-components such as the RangeSelector or the NumberIncrement to create your own VueJS datepicker that matches your specific requirements!
