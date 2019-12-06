@@ -95,12 +95,11 @@
         padding: 0 0.6rem 0 2.8rem;
         width: 100%;
         outline: 0;
+        border: 1px solid #ccc;
+        font-size: 1.4rem;
     }
     input:focus{
         outline: 0;
-    }
-    input{
-        border: 1px solid #ccc;
     }
     input.focused {
         border: 1px solid #40b883;

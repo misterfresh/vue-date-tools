@@ -208,8 +208,8 @@
         bottom: 0;
         height: 100vh;
         width: 100vw;
-        background-color: transparent;
-        opacity: 0.2;
+        background-color: #aaa;
+        opacity: 0.1;
     }
 
     .date-picker-overlay {

@@ -232,7 +232,7 @@
         height: 100vh;
         width: 100vw;
         background-color: #aaa;
-        opacity: 0;
+        opacity: 0.15;
     }
 
     .date-picker-arrows-overlay {
@@ -295,7 +295,6 @@
         width: 30rem;
         height: 20rem;
         top: 5.8rem;
-        left: -4rem;
     }
 
     .bottom-left {

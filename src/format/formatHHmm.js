@@ -11,6 +11,6 @@ export default function formatHHmm(date){
             return ''
         }
     }
-    let {year, month, day, hours, minutes, seconds} = extractYMDhms(date)
+    let {hours, minutes} = extractYMDhms(date)
     return `${hours}:${minutes}`
 }

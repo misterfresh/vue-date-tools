@@ -5,7 +5,7 @@
             <span v-else class="increment-icon default-icon">&lt;</span>
         </div>
         <div class="increment-value">
-            {{(!!value || parseInt(value) === 0 ) ? (parseInt(value) < 10 ? ('0' + value) : value ) : '--'}}
+            {{(!!value || parseInt(value) === 0 ) ? ( 10 > value ? ('0' + value) : value ) : '--'}}
         </div>
         <div class="increment-block" @click="$emit('change', typeof value !== 'undefined' ? (value - 1) : 0)">
             <i v-if="decrementIconClass" class="increment-icon" :class="decrementIconClass"/>

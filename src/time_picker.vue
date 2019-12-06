@@ -142,7 +142,6 @@ export default {
         position: relative;
         display: block;
         height: 3.8rem;
-        width: 26rem;
     }
     .including-label {
         height: 5.8rem;
@@ -187,8 +186,8 @@ export default {
         bottom: 0;
         height: 100vh;
         width: 100vw;
-        background-color: transparent;
-        opacity: 0.2;
+        background-color: #aaa;
+        opacity: 0.15;
     }
 
     .time-picker-overlay {

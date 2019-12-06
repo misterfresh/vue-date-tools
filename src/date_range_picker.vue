@@ -273,7 +273,7 @@ export default {
         position: relative;
         display: block;
         height: 4rem;
-        width: 28rem;
+
         margin: 0;
         padding: 0;
     }

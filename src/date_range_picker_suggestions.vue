@@ -289,7 +289,7 @@ export default {
         position: relative;
         display: block;
         height: 4rem;
-        width: 28rem;
+
         margin: 0;
         padding: 0;
     }
@@ -307,10 +307,8 @@ export default {
     }
 
     .date-picker-input {
-
         padding-top: 0rem;
         background-color: #fff;
-
         text-align: left;
         padding-left: 2rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -409,7 +407,7 @@ export default {
     }
     .bottom {
         width: 76rem;
-        height: 24rem;
+        height: 26rem;
     }
     .bottom-left {
         width: 76rem;
