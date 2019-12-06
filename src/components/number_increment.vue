@@ -40,13 +40,13 @@
     }
     .increment-value {
         font-size: 1.6rem;
-        color: #212529;
+        color: #35495d;
         text-align: center;
     }
     .increment-icon {
         align-self: center;
         font-size: 2rem;
-        color: #212529;
+        color: #35495d;
     }
     .increment-block {
         display: flex;
@@ -54,6 +54,10 @@
         cursor: pointer;
         line-height: 1;
         letter-spacing: 0;
+        color: #35495d;
+    }
+    .increment-block:hover .increment-icon{
+        color: #637f9a;
     }
     .default-icon {
         transform: rotate(90deg);

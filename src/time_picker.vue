@@ -164,7 +164,7 @@ export default {
         border-radius: 0.8rem;
         line-height: 1.25;
         height: 3.8rem;
-        width: 26rem;
+        width: 10rem;
     }
 
     .date-picker-input:focus {
@@ -204,6 +204,7 @@ export default {
     .date-picker-inner {
         display: flex;
         flex-direction: column;
+        margin-top: 1.5rem;
     }
 
     .input-icon-container{

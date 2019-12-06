@@ -284,7 +284,7 @@ export default {
     .input-container {
         position: relative;
         height: 4rem;
-        width: 28rem;
+        width: 24rem;
         margin: 0;
         padding: 0;
         display: block;
@@ -305,7 +305,7 @@ export default {
         border-radius: 2rem;
         border: 2px solid #35495d;
         font-size: 1.8rem;
-        width: 28rem;
+        width: 24rem;
         cursor: pointer;
         outline:none;
 
