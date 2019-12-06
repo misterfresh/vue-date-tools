@@ -317,6 +317,9 @@
         font-size: 1.4rem;
         padding-left: 15px;
         height: 20px;
+        white-space: nowrap;
+        max-width: 95vw;
+        overflow: hidden;
     }
 
    .navigation{

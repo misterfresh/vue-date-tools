@@ -31,16 +31,29 @@
 
         >
             <div class="date-picker-inner">
-                <date-input
-                        :date="activeRange[0]"
-                        :style="{marginTop: '1rem', marginLeft: '0.5rem'}"
-                        :input-style="{width: '22rem'}"
-                        :max-date="maxDate"
-                        @change="date => {
-                        viewRange = [date, viewRange[1] > date ? viewRange[1] : (startOfMonth(addMonths(date, 1)) < maxDate ? startOfMonth(addMonths(date, 1)) : startOfMonth(maxDate))];
-                        activeRange = [date, dateRange[1] > date ? dateRange[1] : Math.min(addMonths(date, 1), maxDate)];
-                    }"
-                />
+                <div style="display: flex; justify-content: space-between">
+                    <date-input
+                            :date="activeRange[0]"
+                            :style="{marginTop: '1rem', marginLeft: '0.5rem'}"
+                            :max-date="maxDate"
+                            @change="date => {
+                                viewRange = [date, viewRange[1] > date ? viewRange[1] : (startOfMonth(addMonths(date, 1)) < maxDate ? startOfMonth(addMonths(date, 1)) : startOfMonth(maxDate))];
+                                activeRange = [date, dateRange[1] > date ? dateRange[1] : Math.min(addMonths(date, 1), maxDate)];
+                            }"
+                            class="compact-date-input"
+                    />
+                    <date-input
+                            :date="activeRange[1]"
+                            :style="{marginTop: '1rem', marginLeft: '0.5rem'}"
+                            @change="date => {
+                                viewRange = [viewRange[0] <= date ? viewRange[0] : startOfMonth(addMonths(date, -1)), date];
+                                activeRange = [dateRange[0] <= date ? dateRange[0] : addMonths(date, -1), date]
+                            }"
+                            :max-date="maxDate"
+                            class="compact-date-input secondary-compact-date-input"
+                    />
+                </div>
+
                 <month-selector
                         :view-date="viewRange[0]"
                         @changeView="date=>{ viewRange = [date, viewRange[1] > date ? viewRange[1] : (startOfMonth(addMonths(date, 1)) < maxDate ? startOfMonth(addMonths(date, 1)) : startOfMonth(maxDate))]}"
@@ -57,8 +70,13 @@
                         @hover="updateHovered"
                         :hovered-date="hoveredDate"
                 />
+                <validation
+                        @apply="$emit('change', activeRange) && (hasFocus = false)"
+                        @cancel="hasFocus = false"
+                        class="compact-validation"
+                />
             </div>
-            <div class="date-picker-inner">
+            <div class="date-picker-inner secondary-selector">
 
                 <date-input
                         :date="activeRange[1]"
@@ -350,8 +368,8 @@ export default {
         bottom: 0;
         height: 100vh;
         width: 100vw;
-        background-color: transparent;
-        opacity: 0.2;
+        background-color: #aaa;
+        opacity: 0.15;
     }
 
     .date-range-picker-suggestions-overlay  {
@@ -364,6 +382,8 @@ export default {
         flex-direction: row;
         border: 1px solid rgba(0, 0, 0, 0.15);
         justify-content: space-around;
+        height: 28rem;
+        width: 28rem;
     }
 
     .date-picker-inner {
@@ -406,23 +426,16 @@ export default {
 
     }
     .bottom {
-        width: 76rem;
-        height: 26rem;
+
     }
     .bottom-left {
-        width: 76rem;
-        height: 24rem;
         top: 4rem;
         right: 0;
     }
     .center {
-        width: 76rem;
-        height: 24rem;
         left: -24rem;
     }
     .left {
-        width: 60rem;
-        height: 24rem;
         right: 0;
     }
     .right {
@@ -468,7 +481,7 @@ export default {
         list-style: none;
         margin: 0;
         padding: 0;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
     }
@@ -487,6 +500,39 @@ export default {
         background-color: #40b883;
         border: 1px solid #40b883;
         color: #fff;
+    }
+
+    .secondary-selector {
+        display: none;
+    }
+
+    .compact-date-input {
+        width: 8rem;
+    }
+
+    .compact-date-input input.date-input {
+        padding-left: 0;
+    }
+
+    .secondary-compact-date-input{
+        margin-right: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .secondary-selector, .date-picker-suggestions {
+            display: flex;
+        }
+        .date-range-picker-suggestions-overlay {
+            width: 76rem;
+            height: 26rem;
+            justify-content: space-around;
+        }
+        .compact-date-input {
+            width: 22rem;
+        }
+        .secondary-compact-date-input, .compact-validation{
+            display: none;
+        }
     }
 
 </style>

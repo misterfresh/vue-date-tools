@@ -13,7 +13,7 @@
     <div class="example-container">
       <div class="item-container">
         <date-picker-arrows
-                label="Vue JS DatePicker with navigation Arrows to go to previous day or next day"
+                label="Vue JS DatePicker with navigation Arrows"
                 :date="datePickerDateArrows"
                 @change="range => {datePickerDateArrows = range;}"
         ></date-picker-arrows>
@@ -23,7 +23,7 @@
     <div class="example-container">
       <div class="item-container">
         <date-range-picker
-                label="DateRange Picker to select a duration between 2 dates"
+                label="DateRange Picker to select a duration"
                 :date-range="dateRangePickerDates"
                 @change="range => {dateRangePickerDates = range;}"
         ></date-range-picker>
@@ -33,7 +33,7 @@
     <div class="example-container">
       <div class="item-container">
         <date-range-picker-suggestions
-                label="Date Range Picker with prepared duration Suggestions"
+                label="Date Range Picker with suggestions"
                 :date-range="dateRangePickerSuggestionsDates"
                 @change="range => {dateRangePickerSuggestionsDates = range;}"
                 :suggestions="{

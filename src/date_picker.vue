@@ -219,7 +219,7 @@
         background-color: #fff;
         border-radius: 0.4rem;
         padding: 0.4rem;
-        flex-direction: row;
+        flex-direction: column;
         border: 1px solid #eee;
         justify-content: center;
     }
@@ -254,8 +254,18 @@
     }
 
     .bottom {
-        width: 44rem;
-        height: 23rem;
+        width: 28rem;
+        height: 28rem;
+    }
+
+    @media (min-width: 768px) {
+        .date-picker-overlay {
+            flex-direction: row;
+        }
+        .bottom {
+            width: 44rem;
+            height: 23rem;
+        }
     }
 
     .bottom-left {

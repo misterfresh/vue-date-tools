@@ -84,7 +84,6 @@
     }
     .date-input {
         border-radius: 0.4rem;
-        padding-left: 3.8rem;
     }
     input{
         height: 3rem;
@@ -120,5 +119,10 @@
         display: flex;
         justify-content: center;
         pointer-events: none;
+    }
+    @media (min-width: 768px) {
+        .date-input {
+            padding-left: 3.8rem;
+        }
     }
 </style>
